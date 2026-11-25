@@ -933,9 +933,12 @@
     async function saveEditedCaption(docId) {
       const inputEl = document.getElementById(`caption-input-${docId}`);
       const newCaption = inputEl ? inputEl.value.trim() : '';
+      const finalCaption = newCaption || 'Tournament highlight';
+      const localItem = sharedGalleryItems.find((g) => g.id === docId);
+      if (localItem) localItem.caption = finalCaption;
       editingGalleryId = null;
-      await updateGalleryCaption(docId, newCaption, true);
       renderGallery();
+      await updateGalleryCaption(docId, finalCaption, true);
     }
 
     async function uploadFilesToServer(files, captionOverride) {
@@ -991,13 +994,17 @@
 
     async function updateGalleryCaption(docId, newCaption, showToast = false) {
       try {
-        await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
+        const res = await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ caption: newCaption })
         });
+        const data = await res.json();
         const localItem = sharedGalleryItems.find((g) => g.id === docId);
-        if (localItem) localItem.caption = newCaption.trim() || 'Tournament highlight';
+        if (localItem) {
+          localItem.caption = (data && data.item && data.item.caption) ? data.item.caption : (newCaption.trim() || 'Tournament highlight');
+        }
+        renderGallery();
         if (showToast) {
           showGalleryBanner('Description saved and updated for all visitors!');
         }
@@ -1084,11 +1091,12 @@
 
     // Load initial data from server & refresh periodically so new uploads/comments appear automatically
     async function syncFromServer() {
+      if (editingGalleryId !== null) return;
       try {
         const res = await fetch('/api/state');
         const state = await res.json();
 
-        if (Array.isArray(state.gallery)) {
+        if (Array.isArray(state.gallery) && editingGalleryId === null) {
           sharedGalleryItems = state.gallery;
           renderGallery();
         }
