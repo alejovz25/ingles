@@ -458,32 +458,52 @@
           <section aria-labelledby="gallery-heading" class="mt-12 pt-8 border-t border-slate-200">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <div class="flex items-center gap-2">
+                <div class="flex flex-wrap items-center gap-2">
                   <span class="text-xs font-bold uppercase tracking-wider text-udea-green">Visual Coverage</span>
                   <span id="media-saved-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-udea-light text-udea-green">
                     <span class="w-1.5 h-1.5 rounded-full bg-udea-green"></span>
-                    Saved permanently
+                    Public &amp; Local Ready
                   </span>
                 </div>
                 <h2 id="gallery-heading" class="font-serif text-2xl font-bold text-slate-900 mt-0.5">Event Photos &amp; Videos</h2>
-                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Add photos or videos from the festival—they stay saved permanently on this page.</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Add photos/videos or paste a public URL so every visitor on Render can see them.</p>
               </div>
               
-              <!-- Interactive Photo / Video Upload Button -->
+              <!-- Interactive Photo / Video Upload & URL Buttons -->
               <div class="no-print flex flex-wrap items-center gap-2 self-start sm:self-auto">
+                <button type="button" onclick="toggleMediaUrlForm()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white text-udea-green border border-udea-green/35 text-xs font-semibold hover:bg-udea-light transition shadow-2xs cursor-pointer">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                  </svg>
+                  <span>Add via URL / Repo File</span>
+                </button>
                 <label class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                   </svg>
-                  <span>Add Photos / Videos</span>
+                  <span>Upload File</span>
                   <input type="file" accept="image/*,video/*" multiple onchange="handleMediaUpload(event)" class="hidden">
                 </label>
               </div>
             </div>
 
+            <!-- Collapsible URL / GitHub Repo File Form -->
+            <div id="media-url-panel" class="no-print hidden mb-6 rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-3">
+              <p class="text-xs font-semibold text-slate-700">
+                Link a file uploaded to GitHub (e.g., <code class="bg-white px-1.5 py-0.5 rounded border">foto1.jpg</code> or <code class="bg-white px-1.5 py-0.5 rounded border">video1.mp4</code>) or a public image/video URL:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
+                <input type="text" id="media-url-input" placeholder="foto1.jpg or https://..." class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
+                <input type="text" id="media-caption-input" placeholder="Caption (e.g., Team Arañita batting)" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
+                <button type="button" onclick="addMediaByUrl()" class="sm:col-span-2 px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer">
+                  Add
+                </button>
+              </div>
+            </div>
+
             <!-- Dynamic Persistent Media Grid -->
             <div id="persistent-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-              <!-- Populated from IndexedDB or default empty frames -->
+              <!-- Populated from PUBLIC_EVENT_MEDIA + IndexedDB -->
             </div>
 
             <!-- Hidden single-slot file input for clicking individual frames -->
@@ -606,249 +626,50 @@
   <!-- Interactive JavaScript for Persistent Media (IndexedDB), Audio/Vocaroo & Comments -->
   <script>
     // =========================================================================
-    // 1. LIGHTBOX CONTROLS (IMAGES & VIDEOS)
+    // 5. PERSISTENT EVENT PHOTOS & VIDEOS GALLERY (PUBLIC REPO + LOCAL)
     // =========================================================================
-    function openLightbox(src, caption, isVideo = false) {
-      const modal = document.getElementById('lightbox-modal');
-      const wrapper = document.getElementById('lightbox-media-wrapper');
-      const cap = document.getElementById('lightbox-caption');
-      cap.textContent = caption || '';
+    // IMPORTANT FOR RENDER / GITHUB:
+    // Put your photo/video filenames here (after uploading them to your GitHub repo)
+    // so EVERY visitor on any device sees them automatically!
+    // Example:
+    // { src: 'foto1.jpg', type: 'image/jpeg', caption: 'Opening match at Cancha Sintética UdeA' },
+    // { src: 'video1.mp4', type: 'video/mp4', caption: 'Highlights from Thursday game' },
+    const PUBLIC_EVENT_MEDIA = [
+      // Add your GitHub repo image/video filenames or public URLs here
+    ];
 
-      if (isVideo) {
-        wrapper.innerHTML = `<video src="${src}" controls autoplay class="max-h-[82vh] w-auto max-w-full rounded-xl shadow-2xl border border-white/15 bg-black"></video>`;
-      } else {
-        wrapper.innerHTML = `<img src="${src}" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">`;
-      }
-
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function forceCloseLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      const wrapper = document.getElementById('lightbox-media-wrapper');
-      wrapper.innerHTML = '';
-      modal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    function closeLightbox(event) {
-      if (event.target.id === 'lightbox-modal') {
-        forceCloseLightbox();
-      }
-    }
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') forceCloseLightbox();
-    });
-
-    // =========================================================================
-    // 2. INDEXEDDB PERMANENT STORAGE FOR PHOTOS, VIDEOS & AUDIO
-    // =========================================================================
-    const DB_NAME = 'UdeASoftballPermanentMediaDB';
-    const DB_VERSION = 1;
-    const STORE_GALLERY = 'gallery_media';
-    const STORE_AUDIO = 'article_audio';
-
-    function openMediaDB() {
-      return new Promise((resolve, reject) => {
-        const request = indexedDB.open(DB_NAME, DB_VERSION);
-        request.onupgradeneeded = (e) => {
-          const db = e.target.result;
-          if (!db.objectStoreNames.contains(STORE_GALLERY)) {
-            db.createObjectStore(STORE_GALLERY, { keyPath: 'id' });
-          }
-          if (!db.objectStoreNames.contains(STORE_AUDIO)) {
-            db.createObjectStore(STORE_AUDIO, { keyPath: 'id' });
-          }
-        };
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error);
-      });
-    }
-
-    async function dbPut(storeName, record) {
-      const db = await openMediaDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction(storeName, 'readwrite');
-        tx.objectStore(storeName).put(record);
-        tx.oncomplete = () => resolve();
-        tx.onerror = () => reject(tx.error);
-      });
-    }
-
-    async function dbGetAll(storeName) {
-      const db = await openMediaDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction(storeName, 'readonly');
-        const req = tx.objectStore(storeName).getAll();
-        req.onsuccess = () => resolve(req.result || []);
-        req.onerror = () => reject(req.error);
-      });
-    }
-
-    async function dbDelete(storeName, id) {
-      const db = await openMediaDB();
-      return new Promise((resolve, reject) => {
-        const tx = db.transaction(storeName, 'readwrite');
-        tx.objectStore(storeName).delete(id);
-        tx.oncomplete = () => resolve();
-        tx.onerror = () => reject(tx.error);
-      });
-    }
-
-    // =========================================================================
-    // 3. AUDIO / VOCAROO SECTION (PERSISTENT)
-    // =========================================================================
-    function toggleAudioEditor() {
-      const panel = document.getElementById('audio-editor-panel');
-      panel.classList.toggle('hidden');
-    }
-
-    function renderVocarooEmbed(rawUrl) {
-      const activeContainer = document.getElementById('audio-active-container');
-      const defaultPlaceholder = document.getElementById('audio-default-placeholder');
-      const statusText = document.getElementById('audio-status-text');
-
-      const match = rawUrl.match(/(?:voca\.ro|vocaroo\.com)\/([a-zA-Z0-9]+)/);
-      defaultPlaceholder.classList.add('hidden');
-      activeContainer.classList.remove('hidden');
-      statusText.textContent = 'Vocaroo recording saved permanently';
-
-      if (match && match[1]) {
-        const vocarooId = match[1];
-        activeContainer.innerHTML = `
-          <div class="space-y-2">
-            <iframe width="100%" height="60" src="https://vocaroo.com/embed/${vocarooId}?autoplay=0" frameborder="0" allow="autoplay" class="rounded-lg"></iframe>
-            <div class="flex items-center justify-between text-xs text-slate-500">
-              <span>Vocaroo ID: <strong>${vocarooId}</strong></span>
-              <a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="text-udea-green font-semibold hover:underline">Open on Vocaroo &rarr;</a>
-            </div>
-          </div>
-        `;
-      } else {
-        activeContainer.innerHTML = `
-          <div class="flex items-center justify-between gap-3">
-            <span class="text-xs sm:text-sm font-medium text-slate-700 truncate">${escapeHtml(rawUrl)}</span>
-            <a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-udea-green text-white text-xs font-semibold shrink-0 hover:bg-udea-dark">Listen Audio</a>
-          </div>
-        `;
-      }
-    }
-
-    function renderAudioBlob(blob, fileName, mimeType) {
-      const objectUrl = URL.createObjectURL(blob);
-      const activeContainer = document.getElementById('audio-active-container');
-      const defaultPlaceholder = document.getElementById('audio-default-placeholder');
-      const statusText = document.getElementById('audio-status-text');
-
-      defaultPlaceholder.classList.add('hidden');
-      activeContainer.classList.remove('hidden');
-      statusText.textContent = `Saved permanently: ${fileName}`;
-
-      activeContainer.innerHTML = `
-        <div class="space-y-2">
-          <p class="text-xs font-semibold text-udea-green">${escapeHtml(fileName)}</p>
-          <audio controls class="w-full h-10">
-            <source src="${objectUrl}" type="${mimeType || 'audio/mpeg'}">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-      `;
-    }
-
-    async function applyVocarooLink() {
-      const input = document.getElementById('vocaroo-input');
-      const feedback = document.getElementById('audio-feedback');
-      const rawUrl = input.value.trim();
-
-      if (!rawUrl) {
-        feedback.textContent = 'Please paste a valid Vocaroo URL first.';
-        feedback.classList.remove('hidden', 'text-udea-green');
-        feedback.classList.add('text-amber-600');
-        return;
-      }
-
-      renderVocarooEmbed(rawUrl);
-      await dbPut(STORE_AUDIO, { id: 'main_audio', kind: 'vocaroo', url: rawUrl });
-
-      feedback.textContent = 'Vocaroo link saved permanently!';
-      feedback.classList.remove('hidden', 'text-amber-600');
-      feedback.classList.add('text-udea-green');
-    }
-
-    async function previewLocalAudio(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const feedback = document.getElementById('audio-feedback');
-      renderAudioBlob(file, file.name, file.type);
-      await dbPut(STORE_AUDIO, {
-        id: 'main_audio',
-        kind: 'file',
-        name: file.name,
-        type: file.type,
-        blob: file
-      });
-
-      feedback.textContent = 'Audio file saved permanently on this page!';
-      feedback.classList.remove('hidden', 'text-amber-600');
-      feedback.classList.add('text-udea-green');
-    }
-
-    async function restoreSavedAudio() {
-      try {
-        const records = await dbGetAll(STORE_AUDIO);
-        const saved = records.find(r => r.id === 'main_audio');
-        if (!saved) return;
-        if (saved.kind === 'vocaroo' && saved.url) {
-          document.getElementById('vocaroo-input').value = saved.url;
-          renderVocarooEmbed(saved.url);
-        } else if (saved.kind === 'file' && saved.blob) {
-          renderAudioBlob(saved.blob, saved.name, saved.type);
-        }
-      } catch (e) {}
-    }
-
-    // =========================================================================
-    // 4. ORGANIZER OPINION AUTO-SAVE
-    // =========================================================================
-    const STORAGE_KEY_ORGANIZER = 'udea_softball_organizer_v1';
-
-    function saveOrganizerFields() {
-      try {
-        localStorage.setItem(STORAGE_KEY_ORGANIZER, JSON.stringify({
-          name: document.getElementById('organizer-name').value,
-          opinion: document.getElementById('organizer-opinion').value
-        }));
-      } catch (e) {}
-    }
-
-    function loadOrganizerFields() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY_ORGANIZER);
-        if (!raw) return;
-        const data = JSON.parse(raw);
-        if (data.name) document.getElementById('organizer-name').value = data.name;
-        if (data.opinion) document.getElementById('organizer-opinion').value = data.opinion;
-      } catch (e) {}
-    }
-
-    function clearOrganizerFields() {
-      document.getElementById('organizer-name').value = '';
-      document.getElementById('organizer-opinion').value = '';
-      localStorage.removeItem(STORAGE_KEY_ORGANIZER);
-    }
-
-    // =========================================================================
-    // 5. PERSISTENT EVENT PHOTOS & VIDEOS GALLERY
-    // =========================================================================
     const DEFAULT_CAPTIONS = [
       'Opening match at the UdeA synthetic field.',
       'Arañita, Smirnoff, and Águilas in action.',
       'Teamwork and student camaraderie on campus.'
     ];
     let targetSlotId = null;
+
+    function toggleMediaUrlForm() {
+      document.getElementById('media-url-panel').classList.toggle('hidden');
+    }
+
+    async function addMediaByUrl() {
+      const urlInput = document.getElementById('media-url-input');
+      const capInput = document.getElementById('media-caption-input');
+      const url = urlInput.value.trim();
+      if (!url) return;
+
+      const isVideo = /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(url);
+      const id = `url-${Date.now()}`;
+      await dbPut(STORE_GALLERY, {
+        id,
+        name: url,
+        type: isVideo ? 'video/mp4' : 'image/jpeg',
+        url,
+        caption: capInput.value.trim() || url,
+        order: Date.now()
+      });
+
+      urlInput.value = '';
+      capInput.value = '';
+      await renderPersistentGallery();
+    }
 
     function triggerSlotPicker(slotId) {
       targetSlotId = slotId;
@@ -865,16 +686,32 @@
         savedItems.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
       } catch (e) {}
 
-      // Ensure at least 3 base slots exist (filled with saved media or empty placeholders)
-      const bySlot = new Map(savedItems.map(item => [item.id, item]));
+      // Combine public repository media (visible to all visitors) + local device uploads
+      const publicItems = PUBLIC_EVENT_MEDIA.map((m, idx) => ({
+        id: `public-${idx}`,
+        isPublic: true,
+        url: m.src,
+        type: m.type || (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(m.src) ? 'video/mp4' : 'image/jpeg'),
+        caption: m.caption || `Event Media ${idx + 1}`,
+        order: -100 + idx
+      }));
+
+      const allSaved = [...publicItems, ...savedItems];
+      const bySlot = new Map(allSaved.map(item => [item.id, item]));
       const slotsToRender = [];
+
+      // First place public items, then fill up to 3 base slots
+      for (const pub of publicItems) {
+        slotsToRender.push(pub);
+        bySlot.delete(pub.id);
+      }
 
       for (let i = 0; i < 3; i++) {
         const slotId = `slot-${i}`;
         if (bySlot.has(slotId)) {
           slotsToRender.push(bySlot.get(slotId));
           bySlot.delete(slotId);
-        } else {
+        } else if (slotsToRender.length < 3) {
           slotsToRender.push({
             id: slotId,
             empty: true,
@@ -884,7 +721,7 @@
         }
       }
 
-      // Append any extra photos/videos beyond the initial 3 slots
+      // Append any extra uploaded/URL items
       for (const extraItem of bySlot.values()) {
         slotsToRender.push(extraItem);
       }
@@ -900,7 +737,7 @@
                   </svg>
                 </div>
                 <span class="text-sm font-bold text-slate-700">Photo or Video ${idx + 1}</span>
-                <span class="text-xs text-slate-400 mt-1">Click to attach &amp; save</span>
+                <span class="text-xs text-slate-400 mt-1">Click to attach</span>
               </div>
               <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
                 ${escapeHtml(item.caption)}
@@ -909,7 +746,7 @@
           `;
         }
 
-        const mediaUrl = URL.createObjectURL(item.blob);
+        const mediaUrl = item.url ? item.url : URL.createObjectURL(item.blob);
         const isVideo = (item.type || '').startsWith('video/');
         const safeCaption = escapeHtml(item.caption || item.name || `Event Media ${idx + 1}`);
 
@@ -924,19 +761,21 @@
                 <button type="button" onclick="openLightbox('${mediaUrl}', '${safeCaption.replace(/'/g, "\\'")}', ${isVideo})" class="px-2.5 py-1 rounded-lg bg-udea-green text-white text-[11px] font-semibold shadow cursor-pointer">
                   Expand
                 </button>
-                <button type="button" onclick="triggerSlotPicker('${item.id}')" class="px-2.5 py-1 rounded-lg bg-white text-slate-800 text-[11px] font-semibold shadow cursor-pointer">
-                  Replace
-                </button>
-                <button type="button" onclick="removeMediaItem('${item.id}')" class="px-2 py-1 rounded-lg bg-red-600 text-white text-[11px] font-semibold shadow cursor-pointer" title="Remove">
-                  &times;
-                </button>
+                ${!item.isPublic ? `
+                  <button type="button" onclick="triggerSlotPicker('${item.id}')" class="px-2.5 py-1 rounded-lg bg-white text-slate-800 text-[11px] font-semibold shadow cursor-pointer">
+                    Replace
+                  </button>
+                  <button type="button" onclick="removeMediaItem('${item.id}')" class="px-2 py-1 rounded-lg bg-red-600 text-white text-[11px] font-semibold shadow cursor-pointer" title="Remove">
+                    &times;
+                  </button>
+                ` : ''}
               </div>
             </div>
             <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center gap-2">
               <input 
                 type="text" 
                 value="${safeCaption}" 
-                onchange="updateMediaCaption('${item.id}', this.value)"
+                ${item.isPublic ? 'readonly' : `onchange="updateMediaCaption('${item.id}', this.value)"`}
                 aria-label="Media caption"
                 class="w-full text-xs text-slate-700 font-medium bg-transparent border-b border-transparent focus:border-udea-green focus:outline-none py-0.5"
               >
