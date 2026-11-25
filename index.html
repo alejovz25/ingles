@@ -90,17 +90,406 @@
       
         <!-- Top Decorative Accent Bar -->
         <div class="h-2 bg-gradient-to-r from-udea-dark via-udea-green to-udea-emerald"></div>
-      <div class="p-6 sm:p-10 md:p-12">
+        <div class="p-6 sm:p-10 md:p-12">
         
-        <!-- Category Tag & Venue Badge -->
-        <div class="flex flex-wrap items-center gap-3 mb-5">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-udea-light text-udea-green">
-            <span class="w-2 h-2 rounded-full bg-udea-green"></span>
-            Campus Sports
-          </span>
-          <span class="text-xs sm:text-sm text-slate-500 font-medium">
-            Synthetic Sports Field • Medellín, Colombia
-          </span>
+          <!-- Category Tag & Venue Badge -->
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-udea-light text-udea-green">
+              <span class="w-2 h-2 rounded-full bg-udea-green"></span>
+              Campus Sports
+            </span>
+            <span class="text-xs sm:text-sm text-slate-500 font-medium">
+              Synthetic Sports Field • Medellín, Colombia
+            </span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-900 leading-[1.15] tracking-tight mb-4">
+            THE UNIVERSITY SOFTBALL FESTIVAL: SPORT AND TEAMWORK
+          </h1>
+
+          <!-- Subtitle / Lead Summary -->
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
+            Students from across the Universidad de Antioquia gather every Thursday at the synthetic field to compete, learn, and strengthen camaraderie through softball.
+          </p>
+
+          <!-- Authors & Publication Meta Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-xl bg-slate-50 border border-slate-200/80 mb-8">
+            <div class="flex items-center gap-3">
+              <div class="flex -space-x-2">
+                <span class="w-9 h-9 rounded-full bg-udea-green text-white font-bold text-xs flex items-center justify-center ring-2 ring-white">AV</span>
+                <span class="w-9 h-9 rounded-full bg-udea-dark text-white font-bold text-xs flex items-center justify-center ring-2 ring-white">W</span>
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-slate-900">By Alejandro Vergara &amp; Wendy</p>
+                <p class="text-[11px] sm:text-xs text-slate-500">Universidad de Antioquia • Sports Coverage</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-udea-green bg-udea-light px-3 py-1.5 rounded-lg">
+              <span>Oct 22 – Nov 26</span>
+              <span>•</span>
+              <span>Thursdays 2:00 p.m.</span>
+            </div>
+          </div>
+
+          <!-- OFFICIAL POSTER & SCHEDULE OVERVIEW CARD -->
+          <section aria-label="Official Tournament Poster and Schedule" class="mb-10 rounded-2xl bg-slate-50 border border-slate-200/90 p-5 sm:p-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              
+              <!-- Official Poster Image with Zoom Lightbox -->
+              <div class="md:col-span-5">
+                <div onclick="openLightbox('image_9b2b5c.jpg', 'Official Poster — Torneo Sofball UdeA')" class="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white cursor-zoom-in">
+                  <img 
+                    src="image_9b2b5c.jpg" 
+                    alt="Torneo Sofball Universidad de Antioquia Official Poster" 
+                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition duration-300"
+                    onerror="this.onerror=null; this.src='https://placehold.co/420x600/026937/ffffff?text=TORNEO+SOFTBALL+UdeA';"
+                  >
+                  <div class="no-print absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-black/70 text-white text-[11px] font-semibold backdrop-blur-xs">
+                    Click to zoom
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tournament Format, Teams & 6-Game Schedule -->
+              <div class="md:col-span-7 space-y-4">
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Official Tournament Guide</span>
+                  <h2 class="font-serif text-xl font-bold text-slate-900 mt-0.5">
+                    Teams &amp; Match Schedule
+                  </h2>
+                  <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                    Double round-robin format (6 regular games) followed by the Grand Final between 1st and 2nd place at <strong class="text-slate-800">Cancha Sintética UdeA</strong>.
+                  </p>
+                </div>
+
+                <!-- Participating Teams Badges -->
+                <div class="bg-white rounded-xl p-3.5 border border-slate-200/90 flex flex-wrap items-center justify-between gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Teams:</span>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">1. Arañita</span>
+                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">2. Smirnoff</span>
+                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">3. Águilas</span>
+                  </div>
+                </div>
+
+                <!-- 6-Match Programación Table -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs">
+                  <div class="bg-udea-dark text-white px-4 py-2.5 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
+                    <span>Programación • Thursdays</span>
+                    <span class="text-emerald-200">2:00 P.M.</span>
+                  </div>
+                  <div class="divide-y divide-slate-100 text-xs sm:text-sm">
+                    <!-- Match 1 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">1</span>
+                        <span class="font-semibold text-slate-700">Thu, Oct 22</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
+                      </div>
+                    </div>
+                    <!-- Match 2 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">2</span>
+                        <span class="font-semibold text-slate-700">Thu, Oct 29</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
+                      </div>
+                    </div>
+                    <!-- Match 3 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">3</span>
+                        <span class="font-semibold text-slate-700">Thu, Nov 5</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
+                      </div>
+                    </div>
+                    <!-- Match 4 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">4</span>
+                        <span class="font-semibold text-slate-700">Thu, Nov 12</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
+                      </div>
+                    </div>
+                    <!-- Match 5 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">5</span>
+                        <span class="font-semibold text-slate-700">Thu, Nov 19</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
+                      </div>
+                    </div>
+                    <!-- Match 6 -->
+                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">6</span>
+                        <span class="font-semibold text-slate-700">Thu, Nov 26</span>
+                      </div>
+                      <div class="font-bold text-slate-900 text-right">
+                        <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Grand Final Banner -->
+                  <div class="bg-udea-light border-t border-udea-green/25 px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2 py-0.5 rounded bg-udea-green text-white text-[11px] font-bold uppercase">Final</span>
+                      <span class="text-xs font-bold text-slate-800">Thursday, Nov 26 (After Match 6)</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-udea-dark">1st Place VS 2nd Place</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- DEDICATED AUDIO RECORDING SECTION (VOCAROO / AUDIO PLAYER) -->
+          <section aria-labelledby="audio-heading" class="mb-10 rounded-2xl bg-gradient-to-br from-udea-light/90 to-emerald-50/50 border border-udea-green/25 p-5 sm:p-6 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-udea-green text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 id="audio-heading" class="text-base font-bold text-slate-900">Audio Recording (Vocaroo)</h2>
+                  <p id="audio-status-text" class="text-xs sm:text-sm text-slate-600">Space reserved for the article audio recording — Add your Vocaroo link here</p>
+                </div>
+              </div>
+              <button type="button" onclick="toggleAudioEditor()" id="toggle-audio-btn" class="no-print inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-udea-green border border-udea-green/30 hover:bg-udea-green hover:text-white transition shadow-2xs self-start sm:self-auto cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+                <span>Attach Audio / Vocaroo</span>
+              </button>
+            </div>
+
+            <!-- Default Visual Placeholder Bar -->
+            <div id="audio-default-placeholder" class="bg-white/90 rounded-xl p-4 border border-dashed border-udea-green/40 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div class="flex items-center gap-3 w-full">
+                <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div class="w-1/4 h-full bg-udea-green/40 rounded-full"></div>
+                  </div>
+                  <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+                    <span>0:00</span>
+                    <span>Narrated by Alejandro Vergara &amp; Wendy</span>
+                    <span>--:--</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Active Audio / Vocaroo Container -->
+            <div id="audio-active-container" class="hidden mt-3 bg-white rounded-xl p-4 border border-udea-green/30 shadow-2xs"></div>
+
+            <!-- Collapsible Input Panel to Paste Vocaroo URL or Upload Local Audio -->
+            <div id="audio-editor-panel" class="no-print hidden mt-4 pt-4 border-t border-udea-green/15 space-y-3">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label for="vocaroo-input" class="block text-xs font-semibold text-slate-700 mb-1">Paste Vocaroo Link (e.g., https://voca.ro/...)</label>
+                  <div class="flex gap-2">
+                    <input type="url" id="vocaroo-input" placeholder="https://voca.ro/1a2b3c4d5e" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-udea-green">
+                    <button type="button" onclick="applyVocarooLink()" class="px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
+                      Embed
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label for="audio-file-input" class="block text-xs font-semibold text-slate-700 mb-1">Or Save Audio File (.mp3, .wav, .m4a)</label>
+                  <input type="file" id="audio-file-input" accept="audio/*" onchange="previewLocalAudio(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-udea-light file:text-udea-green hover:file:bg-emerald-100 cursor-pointer">
+                </div>
+              </div>
+              <p id="audio-feedback" class="text-xs text-udea-green font-medium hidden"></p>
+            </div>
+          </section>
+
+          <!-- ARTICLE BODY CONTENT -->
+          <div class="space-y-6 text-slate-700 text-base sm:text-[1.0625rem] leading-relaxed">
+            
+            <p class="first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:text-udea-green first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+              The University of Antioquia organizes a softball festival for students who enjoy sports and teamwork. This event is a good opportunity to play, have fun and meet new people. The tournament takes place at the university's synthetic sports field.
+            </p>
+
+            <p>
+              This year, three teams are participating in the festival: <strong class="font-semibold text-slate-900">Arañita</strong>, <strong class="font-semibold text-slate-900">Smirnoff</strong> and <strong class="font-semibold text-slate-900">Águilas</strong>. The tournament has six games. The teams play against each other two times. At the end, the first and second teams play in the final to decide the winner.
+            </p>
+
+            <p>
+              The games take place on Thursdays at 2:00 p.m. The dates are October 22 and 29, and November 5, 12, 19 and 26. All the games are played at the university's synthetic field.
+            </p>
+
+            <p>
+              One important thing about this festival is that it is open to different students. Some players belong to the university's representative and development softball teams. However, any student who is interested in playing can also participate. This gives new players the opportunity to learn and enjoy this sport.
+            </p>
+
+            <p>
+              During the games, players hit the ball, run between bases, catch the ball and work together to score points. They also support their teammates and try to win every game. Other students can watch the matches and support their favorite teams.
+            </p>
+
+            <!-- SECTION: A PARTICIPANT'S EXPERIENCE -->
+            <section class="pt-4">
+              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
+                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
+                <span>A PARTICIPANT'S EXPERIENCE</span>
+              </h2>
+
+              <p class="mb-4">One participant said:</p>
+
+              <blockquote class="relative rounded-2xl bg-udea-light/65 border-l-4 border-udea-green p-6 sm:p-7 my-4">
+                <svg class="w-8 h-8 text-udea-green/25 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+                <p class="font-serif italic text-lg sm:text-xl text-slate-800 leading-relaxed">
+                  "This festival helps us become more familiar with the sport and have better teamwork. We can learn new things, practice our skills and work together with other students. It is also a good opportunity to meet new people and enjoy softball."
+                </p>
+                <footer class="mt-3 text-xs font-bold uppercase tracking-wider text-udea-green">
+                  — Student Softball Participant, UdeA
+                </footer>
+              </blockquote>
+            </section>
+
+            <!-- SECTION: THE ORGANIZER'S OPINION -->
+            <section class="pt-4">
+              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
+                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
+                <span>THE ORGANIZER'S OPINION</span>
+              </h2>
+
+              <p class="mb-5">
+                We also want to know the opinion of the coach or organizer about this festival.
+              </p>
+
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-6 space-y-5 shadow-2xs">
+                <div class="flex items-center justify-between gap-2 no-print">
+                  <span class="text-xs font-semibold uppercase tracking-wider text-udea-green">Interview Space (Auto-saved)</span>
+                  <button type="button" onclick="clearOrganizerFields()" class="text-xs text-slate-400 hover:text-slate-600 underline cursor-pointer">Reset lines</button>
+                </div>
+
+                <div>
+                  <label for="organizer-name" class="block text-sm font-bold text-slate-900 mb-1.5">
+                    Coach or organizer:
+                  </label>
+                  <input 
+                    type="text" 
+                    id="organizer-name" 
+                    oninput="saveOrganizerFields()"
+                    placeholder="__________________________________________________"
+                    class="w-full bg-white border-b-2 border-slate-300 focus:border-udea-green rounded-t-lg px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none transition"
+                  >
+                </div>
+
+                <div>
+                  <label for="organizer-opinion" class="block text-sm font-bold text-slate-900 mb-1.5">
+                    Opinion:
+                  </label>
+                  <textarea 
+                    id="organizer-opinion" 
+                    rows="3" 
+                    oninput="saveOrganizerFields()"
+                    placeholder="Write or paste the coach or organizer's opinion here..."
+                    class="w-full bg-white border border-slate-300 focus:border-udea-green rounded-xl px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none leading-relaxed transition"
+                  ></textarea>
+                </div>
+              </div>
+            </section>
+
+            <!-- SECTION: COMPARISON WITH SOFTBALL IN MEDELLÍN -->
+            <section class="pt-4 space-y-4">
+              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
+                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
+                <span>COMPARISON WITH SOFTBALL IN MEDELLÍN</span>
+              </h2>
+
+              <p>
+                This university tournament is a little different from softball tournaments in Medellín. In the city, there are teams from different clubs and communities. These tournaments can have more teams and different players.
+              </p>
+
+              <p>
+                In comparison, the university festival has only three teams this year. It is smaller, and its main goal is to bring university students together. Also, students with different levels of experience can play.
+              </p>
+
+              <p>
+                Both tournaments are important because they support sports and teamwork. However, the university festival is special because it gives students the opportunity to play, learn and represent their university.
+              </p>
+            </section>
+
+            <!-- SECTION: WHY DID WE CHOOSE THIS EVENT? -->
+            <section class="pt-4 space-y-4">
+              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
+                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
+                <span>WHY DID WE CHOOSE THIS EVENT?</span>
+              </h2>
+
+              <p>
+                We chose this event because we think softball is an interesting and fun sport. We also wanted to show the importance of sports at the university.
+              </p>
+
+              <p>
+                We like this festival because it brings students together. It is not only about winning games. It is also about making friends, learning new skills and working as a team.
+              </p>
+
+              <p>
+                We believe more students should participate in these activities because sports are good for our health and help us have a better university experience.
+              </p>
+            </section>
+
+          </div>
+
+          <!-- PERSISTENT EVENT PHOTOS & VIDEOS GALLERY SECTION -->
+          <section aria-labelledby="gallery-heading" class="mt-12 pt-8 border-t border-slate-200">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-udea-green">Visual Coverage</span>
+                  <span id="media-saved-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-udea-light text-udea-green">
+                    <span class="w-1.5 h-1.5 rounded-full bg-udea-green"></span>
+                    Saved permanently
+                  </span>
+                </div>
+                <h2 id="gallery-heading" class="font-serif text-2xl font-bold text-slate-900 mt-0.5">Event Photos &amp; Videos</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Add photos or videos from the festival—they stay saved permanently on this page.</p>
+              </div>
+              
+              <!-- Interactive Photo / Video Upload Button -->
+              <div class="no-print flex flex-wrap items-center gap-2 self-start sm:self-auto">
+                <label class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                  </svg>
+                  <span>Add Photos / Videos</span>
+                  <input type="file" accept="image/*,video/*" multiple onchange="handleMediaUpload(event)" class="hidden">
+                </label>
+              </div>
+            </div>
+
+            <!-- Dynamic Persistent Media Grid -->
+            <div id="persistent-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              <!-- Populated from IndexedDB or default empty frames -->
+            </div>
+
+            <!-- Hidden single-slot file input for clicking individual frames -->
+            <input type="file" id="single-media-input" accept="image/*,video/*" class="hidden" onchange="handleSingleMediaUpload(event)">
+          </section>
+
         </div>
       </article>
 
@@ -180,390 +569,6 @@
   <!-- Institutional Footer with Official UdeA Logo -->
   <footer class="bg-white border-t border-slate-200 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-                </h2>
-                <p class="text-xs sm:text-sm text-slate-600 mt-1">
-                  Double round-robin format (6 regular games) followed by the Grand Final between 1st and 2nd place at <strong class="text-slate-800">Cancha Sintética UdeA</strong>.
-                </p>
-              </div>
-
-              <!-- Participating Teams Badges -->
-              <div class="bg-white rounded-xl p-3.5 border border-slate-200/90 flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Teams:</span>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">1. Arañita</span>
-                  <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">2. Smirnoff</span>
-                  <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">3. Águilas</span>
-                </div>
-              </div>
-
-              <!-- 6-Match Programación Table -->
-              <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs">
-                <div class="bg-udea-dark text-white px-4 py-2.5 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
-                  <span>Programación • Thursdays</span>
-                  <span class="text-emerald-200">2:00 P.M.</span>
-                </div>
-                <div class="divide-y divide-slate-100 text-xs sm:text-sm">
-                  <!-- Match 1 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">1</span>
-                      <span class="font-semibold text-slate-700">Thu, Oct 22</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
-                    </div>
-                  </div>
-                  <!-- Match 2 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">2</span>
-                      <span class="font-semibold text-slate-700">Thu, Oct 29</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
-                    </div>
-                  </div>
-                  <!-- Match 3 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">3</span>
-                      <span class="font-semibold text-slate-700">Thu, Nov 5</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
-                    </div>
-                  </div>
-                  <!-- Match 4 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">4</span>
-                      <span class="font-semibold text-slate-700">Thu, Nov 12</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
-                    </div>
-                  </div>
-                  <!-- Match 5 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">5</span>
-                      <span class="font-semibold text-slate-700">Thu, Nov 19</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
-                    </div>
-                  </div>
-                  <!-- Match 6 -->
-                  <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                    <div class="flex items-center gap-2.5">
-                      <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">6</span>
-                      <span class="font-semibold text-slate-700">Thu, Nov 26</span>
-                    </div>
-                    <div class="font-bold text-slate-900 text-right">
-                      <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- Grand Final Banner -->
-                <div class="bg-udea-light border-t border-udea-green/25 px-4 py-3 flex flex-wrap items-center justify-between gap-2">
-                  <div class="flex items-center gap-2">
-                    <span class="px-2 py-0.5 rounded bg-udea-green text-white text-[11px] font-bold uppercase">Final</span>
-                    <span class="text-xs font-bold text-slate-800">Thursday, Nov 26 (After Match 6)</span>
-                  </div>
-                  <span class="text-xs font-extrabold text-udea-dark">1st Place VS 2nd Place</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- DEDICATED AUDIO RECORDING SECTION (VOCAROO / AUDIO PLAYER PLACEHOLDER) -->
-        <section aria-labelledby="audio-heading" class="mb-10 rounded-2xl bg-gradient-to-br from-udea-light/90 to-emerald-50/50 border border-udea-green/25 p-5 sm:p-6 shadow-xs">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-xl bg-udea-green text-white flex items-center justify-center shrink-0 shadow-sm">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-                </svg>
-              </div>
-              <div>
-                <h2 id="audio-heading" class="text-base font-bold text-slate-900">Audio Recording (Vocaroo)</h2>
-                <p id="audio-status-text" class="text-xs sm:text-sm text-slate-600">Space reserved for the article audio recording — Add your Vocaroo link here</p>
-              </div>
-            </div>
-            <button type="button" onclick="toggleAudioEditor()" id="toggle-audio-btn" class="no-print inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-udea-green border border-udea-green/30 hover:bg-udea-green hover:text-white transition shadow-2xs self-start sm:self-auto cursor-pointer">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-              </svg>
-              <span>Attach Audio / Vocaroo</span>
-            </button>
-          </div>
-
-          <!-- Default Visual Placeholder Bar -->
-          <div id="audio-default-placeholder" class="bg-white/90 rounded-xl p-4 border border-dashed border-udea-green/40 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-3 w-full">
-              <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                </svg>
-              </div>
-              <div class="flex-1">
-                <div class="h-2 bg-slate-200 rounded-full overflow-hidden">
-                  <div class="w-1/4 h-full bg-udea-green/40 rounded-full"></div>
-                </div>
-                <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
-                  <span>0:00</span>
-                  <span>Narrated by Alejandro Vergara &amp; Wendy</span>
-                  <span>--:--</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dynamic Active Audio / Vocaroo Container (Hidden until user adds link or audio file) -->
-          <div id="audio-active-container" class="hidden mt-3 bg-white rounded-xl p-4 border border-udea-green/30 shadow-2xs"></div>
-
-          <!-- Collapsible Input Panel to Paste Vocaroo URL or Upload Local Audio -->
-          <div id="audio-editor-panel" class="no-print hidden mt-4 pt-4 border-t border-udea-green/15 space-y-3">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <!-- Paste Vocaroo Link -->
-              <div>
-                <label for="vocaroo-input" class="block text-xs font-semibold text-slate-700 mb-1">Paste Vocaroo Link (e.g., https://voca.ro/...)</label>
-                <div class="flex gap-2">
-                  <input type="url" id="vocaroo-input" placeholder="https://voca.ro/1a2b3c4d5e" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-udea-green">
-                  <button type="button" onclick="applyVocarooLink()" class="px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
-                    Embed
-                  </button>
-                </div>
-              </div>
-              <!-- Or Upload Audio File -->
-              <div>
-                <label for="audio-file-input" class="block text-xs font-semibold text-slate-700 mb-1">Or Preview Local Audio (.mp3, .wav, .m4a)</label>
-                <input type="file" id="audio-file-input" accept="audio/*" onchange="previewLocalAudio(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-udea-light file:text-udea-green hover:file:bg-emerald-100 cursor-pointer">
-              </div>
-            </div>
-            <p id="audio-feedback" class="text-xs text-udea-green font-medium hidden"></p>
-          </div>
-        </section>
-
-        <!-- ARTICLE BODY CONTENT -->
-        <div class="space-y-6 text-slate-700 text-base sm:text-[1.0625rem] leading-relaxed">
-          
-          <p class="first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:text-udea-green first-letter:float-left first-letter:mr-3 first-letter:leading-none">
-            The University of Antioquia organizes a softball festival for students who enjoy sports and teamwork. This event is a good opportunity to play, have fun and meet new people. The tournament takes place at the university's synthetic sports field.
-          </p>
-
-          <p>
-            This year, three teams are participating in the festival: <strong class="font-semibold text-slate-900">Arañita</strong>, <strong class="font-semibold text-slate-900">Smirnoff</strong> and <strong class="font-semibold text-slate-900">Águilas</strong>. The tournament has six games. The teams play against each other two times. At the end, the first and second teams play in the final to decide the winner.
-          </p>
-
-          <p>
-            The games take place on Thursdays at 2:00 p.m. The dates are October 22 and 29, and November 5, 12, 19 and 26. All the games are played at the university's synthetic field.
-          </p>
-
-          <p>
-            One important thing about this festival is that it is open to different students. Some players belong to the university's representative and development softball teams. However, any student who is interested in playing can also participate. This gives new players the opportunity to learn and enjoy this sport.
-          </p>
-
-          <p>
-            During the games, players hit the ball, run between bases, catch the ball and work together to score points. They also support their teammates and try to win every game. Other students can watch the matches and support their favorite teams.
-          </p>
-
-          <!-- SECTION: A PARTICIPANT'S EXPERIENCE -->
-          <section class="pt-4">
-            <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
-              <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-              <span>A PARTICIPANT'S EXPERIENCE</span>
-            </h2>
-
-            <p class="mb-4">One participant said:</p>
-
-            <blockquote class="relative rounded-2xl bg-udea-light/65 border-l-4 border-udea-green p-6 sm:p-7 my-4">
-              <svg class="w-8 h-8 text-udea-green/25 mb-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-              <p class="font-serif italic text-lg sm:text-xl text-slate-800 leading-relaxed">
-                "This festival helps us become more familiar with the sport and have better teamwork. We can learn new things, practice our skills and work together with other students. It is also a good opportunity to meet new people and enjoy softball."
-              </p>
-              <footer class="mt-3 text-xs font-bold uppercase tracking-wider text-udea-green">
-                — Student Softball Participant, UdeA
-              </footer>
-            </blockquote>
-          </section>
-
-          <!-- SECTION: THE ORGANIZER'S OPINION -->
-          <section class="pt-4">
-            <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
-              <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-              <span>THE ORGANIZER'S OPINION</span>
-            </h2>
-
-            <p class="mb-5">
-              We also want to know the opinion of the coach or organizer about this festival.
-            </p>
-
-            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-6 space-y-5 shadow-2xs">
-              <div class="flex items-center justify-between gap-2 no-print">
-                <span class="text-xs font-semibold uppercase tracking-wider text-udea-green">Interview Space (Click to type directly)</span>
-                <button type="button" onclick="clearOrganizerFields()" class="text-xs text-slate-400 hover:text-slate-600 underline cursor-pointer">Reset lines</button>
-              </div>
-
-              <!-- Coach or organizer fillable line -->
-              <div>
-                <label for="organizer-name" class="block text-sm font-bold text-slate-900 mb-1.5">
-                  Coach or organizer:
-                </label>
-                <input 
-                  type="text" 
-                  id="organizer-name" 
-                  placeholder="__________________________________________________"
-                  class="w-full bg-white border-b-2 border-slate-300 focus:border-udea-green rounded-t-lg px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none transition"
-                >
-              </div>
-
-              <!-- Opinion fillable lines -->
-              <div>
-                <label for="organizer-opinion" class="block text-sm font-bold text-slate-900 mb-1.5">
-                  Opinion:
-                </label>
-                <textarea 
-                  id="organizer-opinion" 
-                  rows="3" 
-                  placeholder="Write or paste the coach or organizer's opinion here..."
-                  class="w-full bg-white border border-slate-300 focus:border-udea-green rounded-xl px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none leading-relaxed transition"
-                ></textarea>
-              </div>
-            </div>
-          </section>
-
-          <!-- SECTION: COMPARISON WITH SOFTBALL IN MEDELLÍN -->
-          <section class="pt-4 space-y-4">
-            <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
-              <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-              <span>COMPARISON WITH SOFTBALL IN MEDELLÍN</span>
-            </h2>
-
-            <p>
-              This university tournament is a little different from softball tournaments in Medellín. In the city, there are teams from different clubs and communities. These tournaments can have more teams and different players.
-            </p>
-
-            <p>
-              In comparison, the university festival has only three teams this year. It is smaller, and its main goal is to bring university students together. Also, students with different levels of experience can play.
-            </p>
-
-            <p>
-              Both tournaments are important because they support sports and teamwork. However, the university festival is special because it gives students the opportunity to play, learn and represent their university.
-            </p>
-          </section>
-
-          <!-- SECTION: WHY DID WE CHOOSE THIS EVENT? -->
-          <section class="pt-4 space-y-4">
-            <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
-              <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-              <span>WHY DID WE CHOOSE THIS EVENT?</span>
-            </h2>
-
-            <p>
-              We chose this event because we think softball is an interesting and fun sport. We also wanted to show the importance of sports at the university.
-            </p>
-
-            <p>
-              We like this festival because it brings students together. It is not only about winning games. It is also about making friends, learning new skills and working as a team.
-            </p>
-
-            <p>
-              We believe more students should participate in these activities because sports are good for our health and help us have a better university experience.
-            </p>
-          </section>
-
-        </div>
-
-        <!-- DEDICATED EVENT PHOTO GALLERY PLACEHOLDER SECTION -->
-        <section aria-labelledby="gallery-heading" class="mt-12 pt-8 border-t border-slate-200">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-udea-green">Visual Coverage</span>
-              <h2 id="gallery-heading" class="font-serif text-2xl font-bold text-slate-900">Event Photos Gallery</h2>
-              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Space reserved for action photographs taken during the matches at Cancha Sintética UdeA.</p>
-            </div>
-            
-            <!-- Interactive Multi-Photo Upload Button -->
-            <label class="no-print inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer self-start sm:self-auto">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-              </svg>
-              <span>Upload / Preview Photos</span>
-              <input type="file" accept="image/*" multiple onchange="handleGalleryUpload(event)" class="hidden">
-            </label>
-          </div>
-
-          <!-- 3-Column Responsive Placeholder Grid -->
-          <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            
-            <!-- Event Photo 1 Placeholder -->
-            <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
-              <div onclick="triggerSinglePhoto(0)" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative" id="photo-slot-0">
-                <div class="w-12 h-12 rounded-full bg-white text-udea-green shadow-2xs border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-105 transition">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <span class="text-sm font-bold text-slate-700">Event Photo 1</span>
-                <span class="text-xs text-slate-400 mt-1">Click to attach image</span>
-              </div>
-              <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
-                Opening match at the UdeA synthetic field.
-              </figcaption>
-            </figure>
-
-            <!-- Event Photo 2 Placeholder -->
-            <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
-              <div onclick="triggerSinglePhoto(1)" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative" id="photo-slot-1">
-                <div class="w-12 h-12 rounded-full bg-white text-udea-green shadow-2xs border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-105 transition">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <span class="text-sm font-bold text-slate-700">Event Photo 2</span>
-                <span class="text-xs text-slate-400 mt-1">Click to attach image</span>
-              </div>
-              <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
-                Arañita, Smirnoff, and Águilas in action.
-              </figcaption>
-            </figure>
-
-            <!-- Event Photo 3 Placeholder -->
-            <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
-              <div onclick="triggerSinglePhoto(2)" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative" id="photo-slot-2">
-                <div class="w-12 h-12 rounded-full bg-white text-udea-green shadow-2xs border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-105 transition">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <span class="text-sm font-bold text-slate-700">Event Photo 3</span>
-                <span class="text-xs text-slate-400 mt-1">Click to attach image</span>
-              </div>
-              <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
-                Teamwork and student camaraderie on campus.
-              </figcaption>
-            </figure>
-
-          </div>
-          <!-- Hidden single-slot file input for clicking individual frames -->
-          <input type="file" id="single-photo-input" accept="image/*" class="hidden" onchange="handleSinglePhotoUpload(event)">
-        </section>
-
-      </div>
-    </article>
-  </main>
-
-  <!-- Institutional Footer with Official UdeA Logo -->
-  <footer class="bg-white border-t border-slate-200 mt-12">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div class="flex flex-col sm:flex-row items-center gap-3.5">
         <img 
           src="image_9b2b00.png" 
@@ -580,9 +585,9 @@
     </div>
   </footer>
 
-  <!-- Full-Screen Lightbox Modal for Inspecting Poster or Uploaded Photos -->
+  <!-- Full-Screen Lightbox Modal for Inspecting Poster, Photos, or Videos -->
   <div id="lightbox-modal" onclick="closeLightbox(event)" class="no-print fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6">
-    <div class="relative max-w-3xl w-full flex flex-col items-center">
+    <div class="relative max-w-4xl w-full flex flex-col items-center">
       <div class="w-full flex items-center justify-between text-white mb-3 px-1">
         <p id="lightbox-caption" class="text-xs sm:text-sm font-semibold text-slate-200 truncate pr-4"></p>
         <button type="button" onclick="forceCloseLightbox()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition cursor-pointer shrink-0">
@@ -592,27 +597,37 @@
           </svg>
         </button>
       </div>
-      <img id="lightbox-img" src="" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">
+      <div id="lightbox-media-wrapper" class="w-full flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">
+      </div>
     </div>
   </div>
 
-  <!-- Interactive JavaScript for Audio/Vocaroo, Photo Gallery & Lightbox -->
+  <!-- Interactive JavaScript for Persistent Media (IndexedDB), Audio/Vocaroo & Comments -->
   <script>
-    let activeSlotIndex = 0;
-
-    // Lightbox Controls
-    function openLightbox(src, caption) {
+    // =========================================================================
+    // 1. LIGHTBOX CONTROLS (IMAGES & VIDEOS)
+    // =========================================================================
+    function openLightbox(src, caption, isVideo = false) {
       const modal = document.getElementById('lightbox-modal');
-      const img = document.getElementById('lightbox-img');
+      const wrapper = document.getElementById('lightbox-media-wrapper');
       const cap = document.getElementById('lightbox-caption');
-      img.src = src;
       cap.textContent = caption || '';
+
+      if (isVideo) {
+        wrapper.innerHTML = `<video src="${src}" controls autoplay class="max-h-[82vh] w-auto max-w-full rounded-xl shadow-2xl border border-white/15 bg-black"></video>`;
+      } else {
+        wrapper.innerHTML = `<img src="${src}" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">`;
+      }
+
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
 
     function forceCloseLightbox() {
       const modal = document.getElementById('lightbox-modal');
+      const wrapper = document.getElementById('lightbox-media-wrapper');
+      wrapper.innerHTML = '';
       modal.classList.add('hidden');
       document.body.style.overflow = '';
     }
@@ -627,33 +642,78 @@
       if (e.key === 'Escape') forceCloseLightbox();
     });
 
-    // Toggle the Audio/Vocaroo input drawer
+    // =========================================================================
+    // 2. INDEXEDDB PERMANENT STORAGE FOR PHOTOS, VIDEOS & AUDIO
+    // =========================================================================
+    const DB_NAME = 'UdeASoftballPermanentMediaDB';
+    const DB_VERSION = 1;
+    const STORE_GALLERY = 'gallery_media';
+    const STORE_AUDIO = 'article_audio';
+
+    function openMediaDB() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(STORE_GALLERY)) {
+            db.createObjectStore(STORE_GALLERY, { keyPath: 'id' });
+          }
+          if (!db.objectStoreNames.contains(STORE_AUDIO)) {
+            db.createObjectStore(STORE_AUDIO, { keyPath: 'id' });
+          }
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    async function dbPut(storeName, record) {
+      const db = await openMediaDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(storeName, 'readwrite');
+        tx.objectStore(storeName).put(record);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    async function dbGetAll(storeName) {
+      const db = await openMediaDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(storeName, 'readonly');
+        const req = tx.objectStore(storeName).getAll();
+        req.onsuccess = () => resolve(req.result || []);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function dbDelete(storeName, id) {
+      const db = await openMediaDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(storeName, 'readwrite');
+        tx.objectStore(storeName).delete(id);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    // =========================================================================
+    // 3. AUDIO / VOCAROO SECTION (PERSISTENT)
+    // =========================================================================
     function toggleAudioEditor() {
       const panel = document.getElementById('audio-editor-panel');
       panel.classList.toggle('hidden');
     }
 
-    // Apply Vocaroo link (converts voca.ro or vocaroo.com links into an embeddable player or direct card)
-    function applyVocarooLink() {
-      const input = document.getElementById('vocaroo-input');
-      const feedback = document.getElementById('audio-feedback');
+    function renderVocarooEmbed(rawUrl) {
       const activeContainer = document.getElementById('audio-active-container');
       const defaultPlaceholder = document.getElementById('audio-default-placeholder');
       const statusText = document.getElementById('audio-status-text');
 
-      const rawUrl = input.value.trim();
-      if (!rawUrl) {
-        feedback.textContent = 'Please paste a valid Vocaroo URL first.';
-        feedback.classList.remove('hidden', 'text-udea-green');
-        feedback.classList.add('text-amber-600');
-        return;
-      }
-
-      // Extract Vocaroo ID if standard voca.ro or vocaroo.com URL
       const match = rawUrl.match(/(?:voca\.ro|vocaroo\.com)\/([a-zA-Z0-9]+)/);
       defaultPlaceholder.classList.add('hidden');
       activeContainer.classList.remove('hidden');
-      statusText.textContent = 'Vocaroo recording attached';
+      statusText.textContent = 'Vocaroo recording saved permanently';
 
       if (match && match[1]) {
         const vocarooId = match[1];
@@ -662,101 +722,302 @@
             <iframe width="100%" height="60" src="https://vocaroo.com/embed/${vocarooId}?autoplay=0" frameborder="0" allow="autoplay" class="rounded-lg"></iframe>
             <div class="flex items-center justify-between text-xs text-slate-500">
               <span>Vocaroo ID: <strong>${vocarooId}</strong></span>
-              <a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="text-udea-green font-semibold hover:underline">Open on Vocaroo &rarr;</a>
+              <a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="text-udea-green font-semibold hover:underline">Open on Vocaroo &rarr;</a>
             </div>
           </div>
         `;
       } else {
-        // Fallback clean link card if custom URL
         activeContainer.innerHTML = `
           <div class="flex items-center justify-between gap-3">
-            <span class="text-xs sm:text-sm font-medium text-slate-700 truncate">${rawUrl}</span>
-            <a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-udea-green text-white text-xs font-semibold shrink-0 hover:bg-udea-dark">Listen Audio</a>
+            <span class="text-xs sm:text-sm font-medium text-slate-700 truncate">${escapeHtml(rawUrl)}</span>
+            <a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-udea-green text-white text-xs font-semibold shrink-0 hover:bg-udea-dark">Listen Audio</a>
           </div>
         `;
       }
-
-      feedback.textContent = 'Vocaroo recording loaded successfully!';
-      feedback.classList.remove('hidden', 'text-amber-600');
-      feedback.classList.add('text-udea-green');
     }
 
-    // Preview local audio file directly in the browser
-    function previewLocalAudio(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      const objectUrl = URL.createObjectURL(file);
+    function renderAudioBlob(blob, fileName, mimeType) {
+      const objectUrl = URL.createObjectURL(blob);
       const activeContainer = document.getElementById('audio-active-container');
       const defaultPlaceholder = document.getElementById('audio-default-placeholder');
       const statusText = document.getElementById('audio-status-text');
-      const feedback = document.getElementById('audio-feedback');
 
       defaultPlaceholder.classList.add('hidden');
       activeContainer.classList.remove('hidden');
-      statusText.textContent = `Loaded: ${file.name}`;
+      statusText.textContent = `Saved permanently: ${fileName}`;
 
       activeContainer.innerHTML = `
         <div class="space-y-2">
-          <p class="text-xs font-semibold text-udea-green">${file.name}</p>
+          <p class="text-xs font-semibold text-udea-green">${escapeHtml(fileName)}</p>
           <audio controls class="w-full h-10">
-            <source src="${objectUrl}" type="${file.type}">
+            <source src="${objectUrl}" type="${mimeType || 'audio/mpeg'}">
             Your browser does not support the audio element.
           </audio>
         </div>
       `;
+    }
 
-      feedback.textContent = 'Audio file ready to play!';
+    async function applyVocarooLink() {
+      const input = document.getElementById('vocaroo-input');
+      const feedback = document.getElementById('audio-feedback');
+      const rawUrl = input.value.trim();
+
+      if (!rawUrl) {
+        feedback.textContent = 'Please paste a valid Vocaroo URL first.';
+        feedback.classList.remove('hidden', 'text-udea-green');
+        feedback.classList.add('text-amber-600');
+        return;
+      }
+
+      renderVocarooEmbed(rawUrl);
+      await dbPut(STORE_AUDIO, { id: 'main_audio', kind: 'vocaroo', url: rawUrl });
+
+      feedback.textContent = 'Vocaroo link saved permanently!';
       feedback.classList.remove('hidden', 'text-amber-600');
       feedback.classList.add('text-udea-green');
     }
 
-    // Reset organizer interview lines
+    async function previewLocalAudio(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const feedback = document.getElementById('audio-feedback');
+      renderAudioBlob(file, file.name, file.type);
+      await dbPut(STORE_AUDIO, {
+        id: 'main_audio',
+        kind: 'file',
+        name: file.name,
+        type: file.type,
+        blob: file
+      });
+
+      feedback.textContent = 'Audio file saved permanently on this page!';
+      feedback.classList.remove('hidden', 'text-amber-600');
+      feedback.classList.add('text-udea-green');
+    }
+
+    async function restoreSavedAudio() {
+      try {
+        const records = await dbGetAll(STORE_AUDIO);
+        const saved = records.find(r => r.id === 'main_audio');
+        if (!saved) return;
+        if (saved.kind === 'vocaroo' && saved.url) {
+          document.getElementById('vocaroo-input').value = saved.url;
+          renderVocarooEmbed(saved.url);
+        } else if (saved.kind === 'file' && saved.blob) {
+          renderAudioBlob(saved.blob, saved.name, saved.type);
+        }
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 4. ORGANIZER OPINION AUTO-SAVE
+    // =========================================================================
+    const STORAGE_KEY_ORGANIZER = 'udea_softball_organizer_v1';
+
+    function saveOrganizerFields() {
+      try {
+        localStorage.setItem(STORAGE_KEY_ORGANIZER, JSON.stringify({
+          name: document.getElementById('organizer-name').value,
+          opinion: document.getElementById('organizer-opinion').value
+        }));
+      } catch (e) {}
+    }
+
+    function loadOrganizerFields() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_ORGANIZER);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        if (data.name) document.getElementById('organizer-name').value = data.name;
+        if (data.opinion) document.getElementById('organizer-opinion').value = data.opinion;
+      } catch (e) {}
+    }
+
     function clearOrganizerFields() {
       document.getElementById('organizer-name').value = '';
       document.getElementById('organizer-opinion').value = '';
+      localStorage.removeItem(STORAGE_KEY_ORGANIZER);
     }
 
-    // Trigger file picker for a specific gallery slot
-    function triggerSinglePhoto(slotIndex) {
-      activeSlotIndex = slotIndex;
-      document.getElementById('single-photo-input').click();
+    // =========================================================================
+    // 5. PERSISTENT EVENT PHOTOS & VIDEOS GALLERY
+    // =========================================================================
+    const DEFAULT_CAPTIONS = [
+      'Opening match at the UdeA synthetic field.',
+      'Arañita, Smirnoff, and Águilas in action.',
+      'Teamwork and student camaraderie on campus.'
+    ];
+    let targetSlotId = null;
+
+    function triggerSlotPicker(slotId) {
+      targetSlotId = slotId;
+      document.getElementById('single-media-input').click();
     }
 
-    // Render an image inside a gallery slot
-    function renderPhotoInSlot(slotIndex, file) {
-      const slot = document.getElementById(`photo-slot-${slotIndex}`);
-      if (!slot || !file) return;
+    async function renderPersistentGallery() {
+      const grid = document.getElementById('persistent-media-grid');
+      if (!grid) return;
 
-      const imgUrl = URL.createObjectURL(file);
-      slot.innerHTML = `
-        <img src="${imgUrl}" alt="Event Photo ${slotIndex + 1}" class="w-full h-full object-cover absolute inset-0">
-        <div class="no-print absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2">
-          <button type="button" onclick="event.stopPropagation(); openLightbox('${imgUrl}', 'Event Photo ${slotIndex + 1} — UdeA Softball Festival')" class="px-2.5 py-1.5 rounded-lg bg-udea-green text-white text-xs font-semibold shadow cursor-pointer">Zoom</button>
-          <span class="px-2.5 py-1.5 rounded-lg bg-white text-slate-900 text-xs font-semibold shadow">Replace</span>
-        </div>
-      `;
+      let savedItems = [];
+      try {
+        savedItems = await dbGetAll(STORE_GALLERY);
+        savedItems.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+      } catch (e) {}
+
+      // Ensure at least 3 base slots exist (filled with saved media or empty placeholders)
+      const bySlot = new Map(savedItems.map(item => [item.id, item]));
+      const slotsToRender = [];
+
+      for (let i = 0; i < 3; i++) {
+        const slotId = `slot-${i}`;
+        if (bySlot.has(slotId)) {
+          slotsToRender.push(bySlot.get(slotId));
+          bySlot.delete(slotId);
+        } else {
+          slotsToRender.push({
+            id: slotId,
+            empty: true,
+            index: i,
+            caption: DEFAULT_CAPTIONS[i]
+          });
+        }
+      }
+
+      // Append any extra photos/videos beyond the initial 3 slots
+      for (const extraItem of bySlot.values()) {
+        slotsToRender.push(extraItem);
+      }
+
+      grid.innerHTML = slotsToRender.map((item, idx) => {
+        if (item.empty) {
+          return `
+            <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
+              <div onclick="triggerSlotPicker('${item.id}')" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative">
+                <div class="w-12 h-12 rounded-full bg-white text-udea-green shadow-2xs border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-105 transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-bold text-slate-700">Photo or Video ${idx + 1}</span>
+                <span class="text-xs text-slate-400 mt-1">Click to attach &amp; save</span>
+              </div>
+              <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
+                ${escapeHtml(item.caption)}
+              </figcaption>
+            </figure>
+          `;
+        }
+
+        const mediaUrl = URL.createObjectURL(item.blob);
+        const isVideo = (item.type || '').startsWith('video/');
+        const safeCaption = escapeHtml(item.caption || item.name || `Event Media ${idx + 1}`);
+
+        return `
+          <figure class="group relative rounded-2xl border border-slate-200 bg-white shadow-2xs overflow-hidden flex flex-col">
+            <div class="aspect-[4/3] w-full bg-slate-900 relative overflow-hidden">
+              ${isVideo
+                ? `<video src="${mediaUrl}" controls playsinline class="w-full h-full object-cover"></video>`
+                : `<img src="${mediaUrl}" alt="${safeCaption}" class="w-full h-full object-cover">`
+              }
+              <div class="no-print absolute top-2.5 right-2.5 flex items-center gap-1.5 opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition">
+                <button type="button" onclick="openLightbox('${mediaUrl}', '${safeCaption.replace(/'/g, "\\'")}', ${isVideo})" class="px-2.5 py-1 rounded-lg bg-udea-green text-white text-[11px] font-semibold shadow cursor-pointer">
+                  Expand
+                </button>
+                <button type="button" onclick="triggerSlotPicker('${item.id}')" class="px-2.5 py-1 rounded-lg bg-white text-slate-800 text-[11px] font-semibold shadow cursor-pointer">
+                  Replace
+                </button>
+                <button type="button" onclick="removeMediaItem('${item.id}')" class="px-2 py-1 rounded-lg bg-red-600 text-white text-[11px] font-semibold shadow cursor-pointer" title="Remove">
+                  &times;
+                </button>
+              </div>
+            </div>
+            <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center gap-2">
+              <input 
+                type="text" 
+                value="${safeCaption}" 
+                onchange="updateMediaCaption('${item.id}', this.value)"
+                aria-label="Media caption"
+                class="w-full text-xs text-slate-700 font-medium bg-transparent border-b border-transparent focus:border-udea-green focus:outline-none py-0.5"
+              >
+            </figcaption>
+          </figure>
+        `;
+      }).join('');
     }
 
-    // Handle single photo upload
-    function handleSinglePhotoUpload(event) {
+    async function saveFileToGallery(slotId, file, orderIndex) {
+      const defaultIdx = parseInt(slotId.replace('slot-', ''), 10);
+      const caption = !isNaN(defaultIdx) && DEFAULT_CAPTIONS[defaultIdx]
+        ? DEFAULT_CAPTIONS[defaultIdx]
+        : file.name.replace(/\.[^/.]+$/, '');
+
+      await dbPut(STORE_GALLERY, {
+        id: slotId,
+        name: file.name,
+        type: file.type,
+        blob: file,
+        caption,
+        order: orderIndex
+      });
+    }
+
+    async function handleSingleMediaUpload(event) {
       const file = event.target.files[0];
-      if (file) {
-        renderPhotoInSlot(activeSlotIndex, file);
+      if (file && targetSlotId) {
+        const order = parseInt(targetSlotId.replace('slot-', ''), 10) || Date.now();
+        await saveFileToGallery(targetSlotId, file, order);
+        await renderPersistentGallery();
       }
       event.target.value = '';
     }
 
-    // Handle multi-photo upload across the 3 gallery slots
-    function handleGalleryUpload(event) {
-      const files = Array.from(event.target.files).slice(0, 3);
-      files.forEach((file, idx) => {
-        renderPhotoInSlot(idx, file);
-      });
+    async function handleMediaUpload(event) {
+      const files = Array.from(event.target.files);
+      if (!files.length) return;
+
+      const existing = await dbGetAll(STORE_GALLERY);
+      const usedIds = new Set(existing.map(i => i.id));
+
+      for (const file of files) {
+        // Fill empty base slots (slot-0, slot-1, slot-2) first, then create new slots
+        let assignedId = null;
+        let order = Date.now();
+        for (let i = 0; i < 3; i++) {
+          if (!usedIds.has(`slot-${i}`)) {
+            assignedId = `slot-${i}`;
+            order = i;
+            usedIds.add(assignedId);
+            break;
+          }
+        }
+        if (!assignedId) {
+          assignedId = `media-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+        }
+        await saveFileToGallery(assignedId, file, order);
+      }
+
+      await renderPersistentGallery();
       event.target.value = '';
     }
 
-    // Spectator Comments Logic (with localStorage persistence)
+    async function updateMediaCaption(id, newCaption) {
+      const existing = await dbGetAll(STORE_GALLERY);
+      const target = existing.find(i => i.id === id);
+      if (target) {
+        target.caption = newCaption.trim() || target.name;
+        await dbPut(STORE_GALLERY, target);
+      }
+    }
+
+    async function removeMediaItem(id) {
+      await dbDelete(STORE_GALLERY, id);
+      await renderPersistentGallery();
+    }
+
+    // =========================================================================
+    // 6. SPECTATOR COMMENTS LOGIC (WITH LOCALSTORAGE PERSISTENCE)
+    // =========================================================================
     const STORAGE_KEY_COMMENTS = 'udea_softball_spectator_comments_v1';
     const defaultComments = [
       {
@@ -794,7 +1055,7 @@
 
     function escapeHtml(text) {
       const div = document.createElement('div');
-      div.textContent = text;
+      div.textContent = String(text ?? '');
       return div.innerHTML;
     }
 
@@ -866,7 +1127,10 @@
       msgInput.value = '';
     }
 
-    // Initialize comments on load
+    // Initialize all persistent sections on load
+    loadOrganizerFields();
+    restoreSavedAudio();
+    renderPersistentGallery();
     renderSpectatorComments();
   </script>
 </body>
