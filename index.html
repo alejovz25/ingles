@@ -48,7 +48,7 @@
 
   <!-- Institutional Top Bar / Header -->
   <header class="bg-udea-green text-white shadow-md sticky top-0 z-30 border-b border-udea-dark">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
       
       <!-- Official Universidad de Antioquia Logo Card & Section Title -->
       <div class="flex items-center gap-3.5 sm:gap-4">
@@ -66,16 +66,17 @@
         </div>
       </div>
 
-      <!-- Right Header Pill & Print Action -->
+      <!-- Right Header Live Sync Indicator & Print Action -->
       <div class="flex items-center gap-2.5 no-print">
-        <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/15 text-white border border-white/20">
-          Cancha Sintética UdeA
+        <span id="cloud-sync-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/15 text-white border border-white/20">
+          <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+          <span>Live Shared Edition</span>
         </span>
         <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-white text-udea-green hover:bg-emerald-50 transition shadow-sm cursor-pointer" title="Print or Save as PDF">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
           </svg>
-          <span>Print Article</span>
+          <span class="hidden sm:inline">Print Article</span>
         </button>
       </div>
     </div>
@@ -138,7 +139,7 @@
               
               <!-- Official Poster Image with Zoom Lightbox -->
               <div class="md:col-span-5">
-                <div onclick="openLightbox('image_9b2b5c.jpg', 'Official Poster — Torneo Sofball UdeA')" class="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white cursor-zoom-in">
+                <div onclick="openLightbox('image_9b2b5c.jpg', 'Official Poster — Torneo Sofball UdeA', false)" class="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white cursor-zoom-in">
                   <img 
                     src="image_9b2b5c.jpg" 
                     alt="Torneo Sofball Universidad de Antioquia Official Poster" 
@@ -180,7 +181,6 @@
                     <span class="text-emerald-200">2:00 P.M.</span>
                   </div>
                   <div class="divide-y divide-slate-100 text-xs sm:text-sm">
-                    <!-- Match 1 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">1</span>
@@ -190,7 +190,6 @@
                         ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
                       </div>
                     </div>
-                    <!-- Match 2 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">2</span>
@@ -200,7 +199,6 @@
                         <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
                       </div>
                     </div>
-                    <!-- Match 3 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">3</span>
@@ -210,7 +208,6 @@
                         <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
                       </div>
                     </div>
-                    <!-- Match 4 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">4</span>
@@ -220,7 +217,6 @@
                         ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
                       </div>
                     </div>
-                    <!-- Match 5 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">5</span>
@@ -230,7 +226,6 @@
                         <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
                       </div>
                     </div>
-                    <!-- Match 6 -->
                     <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
                       <div class="flex items-center gap-2.5">
                         <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">6</span>
@@ -255,7 +250,7 @@
             </div>
           </section>
 
-          <!-- DEDICATED AUDIO RECORDING SECTION (VOCAROO / AUDIO PLAYER) -->
+          <!-- SHARED AUDIO RECORDING SECTION (VOCAROO / AUDIO LINK) -->
           <section aria-labelledby="audio-heading" class="mb-10 rounded-2xl bg-gradient-to-br from-udea-light/90 to-emerald-50/50 border border-udea-green/25 p-5 sm:p-6 shadow-xs">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div class="flex items-center gap-3">
@@ -273,7 +268,7 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
                 </svg>
-                <span>Attach Audio / Vocaroo</span>
+                <span>Attach Vocaroo Link</span>
               </button>
             </div>
 
@@ -301,22 +296,14 @@
             <!-- Dynamic Active Audio / Vocaroo Container -->
             <div id="audio-active-container" class="hidden mt-3 bg-white rounded-xl p-4 border border-udea-green/30 shadow-2xs"></div>
 
-            <!-- Collapsible Input Panel to Paste Vocaroo URL or Upload Local Audio -->
-            <div id="audio-editor-panel" class="no-print hidden mt-4 pt-4 border-t border-udea-green/15 space-y-3">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
-                  <label for="vocaroo-input" class="block text-xs font-semibold text-slate-700 mb-1">Paste Vocaroo Link (e.g., https://voca.ro/...)</label>
-                  <div class="flex gap-2">
-                    <input type="url" id="vocaroo-input" placeholder="https://voca.ro/1a2b3c4d5e" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-udea-green">
-                    <button type="button" onclick="applyVocarooLink()" class="px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
-                      Embed
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label for="audio-file-input" class="block text-xs font-semibold text-slate-700 mb-1">Or Save Audio File (.mp3, .wav, .m4a)</label>
-                  <input type="file" id="audio-file-input" accept="audio/*" onchange="previewLocalAudio(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-udea-light file:text-udea-green hover:file:bg-emerald-100 cursor-pointer">
-                </div>
+            <!-- Collapsible Input Panel to Paste Vocaroo URL -->
+            <div id="audio-editor-panel" class="no-print hidden mt-4 pt-4 border-t border-udea-green/15 space-y-2">
+              <label for="vocaroo-input" class="block text-xs font-semibold text-slate-700">Paste Vocaroo Link (e.g., https://voca.ro/...) — Saves for all visitors:</label>
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input type="url" id="vocaroo-input" placeholder="https://voca.ro/1a2b3c4d5e" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
+                <button type="button" onclick="applyVocarooLink()" class="px-4 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
+                  Save &amp; Publish Audio
+                </button>
               </div>
               <p id="audio-feedback" class="text-xs text-udea-green font-medium hidden"></p>
             </div>
@@ -380,8 +367,8 @@
 
               <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-6 space-y-5 shadow-2xs">
                 <div class="flex items-center justify-between gap-2 no-print">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-udea-green">Interview Space (Auto-saved)</span>
-                  <button type="button" onclick="clearOrganizerFields()" class="text-xs text-slate-400 hover:text-slate-600 underline cursor-pointer">Reset lines</button>
+                  <span id="organizer-sync-status" class="text-xs font-semibold uppercase tracking-wider text-udea-green">Shared Interview Space</span>
+                  <button type="button" onclick="saveOrganizerFields(true)" class="px-3 py-1 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer">Save for Everyone</button>
                 </div>
 
                 <div>
@@ -391,7 +378,7 @@
                   <input 
                     type="text" 
                     id="organizer-name" 
-                    oninput="saveOrganizerFields()"
+                    onblur="saveOrganizerFields(false)"
                     placeholder="__________________________________________________"
                     class="w-full bg-white border-b-2 border-slate-300 focus:border-udea-green rounded-t-lg px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none transition"
                   >
@@ -404,7 +391,7 @@
                   <textarea 
                     id="organizer-opinion" 
                     rows="3" 
-                    oninput="saveOrganizerFields()"
+                    onblur="saveOrganizerFields(false)"
                     placeholder="Write or paste the coach or organizer's opinion here..."
                     class="w-full bg-white border border-slate-300 focus:border-udea-green rounded-xl px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none leading-relaxed transition"
                   ></textarea>
@@ -454,78 +441,84 @@
 
           </div>
 
-          <!-- PERSISTENT EVENT PHOTOS & VIDEOS GALLERY SECTION -->
+          <!-- SHARED EVENT PHOTOS & VIDEOS GALLERY SECTION -->
           <section aria-labelledby="gallery-heading" class="mt-12 pt-8 border-t border-slate-200">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
               <div>
                 <div class="flex flex-wrap items-center gap-2">
                   <span class="text-xs font-bold uppercase tracking-wider text-udea-green">Visual Coverage</span>
-                  <span id="media-saved-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-udea-light text-udea-green">
+                  <span id="gallery-sync-badge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-udea-light text-udea-green">
                     <span class="w-1.5 h-1.5 rounded-full bg-udea-green"></span>
-                    Public &amp; Local Ready
+                    Shared Across All Devices
                   </span>
                 </div>
                 <h2 id="gallery-heading" class="font-serif text-2xl font-bold text-slate-900 mt-0.5">Event Photos &amp; Videos</h2>
-                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Add photos/videos or paste a public URL so every visitor on Render can see them.</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Upload photos directly from your phone/PC or paste a video link — everyone visiting the page will see them.</p>
               </div>
               
-              <!-- Interactive Photo / Video Upload & URL Buttons -->
+              <!-- Interactive Photo Upload & Video Link Buttons -->
               <div class="no-print flex flex-wrap items-center gap-2 self-start sm:self-auto">
                 <button type="button" onclick="toggleMediaUrlForm()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white text-udea-green border border-udea-green/35 text-xs font-semibold hover:bg-udea-light transition shadow-2xs cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                   </svg>
-                  <span>Add via URL / Repo File</span>
+                  <span>Add Video / URL</span>
                 </button>
                 <label class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
-                  <span>Upload File</span>
-                  <input type="file" accept="image/*,video/*" multiple onchange="handleMediaUpload(event)" class="hidden">
+                  <span>Upload Photo</span>
+                  <input type="file" accept="image/*" multiple onchange="handlePhotoUpload(event)" class="hidden">
                 </label>
               </div>
             </div>
 
-            <!-- Collapsible URL / GitHub Repo File Form -->
+            <!-- Inline Status / Toast Message (Never uses alert()) -->
+            <div id="gallery-status-banner" class="no-print hidden mb-5 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium bg-udea-light text-udea-dark border border-udea-green/25 flex items-center justify-between gap-3">
+              <span id="gallery-status-text"></span>
+              <button type="button" onclick="hideGalleryBanner()" class="text-xs font-bold underline cursor-pointer shrink-0">Dismiss</button>
+            </div>
+
+            <!-- Collapsible Video / Public Media URL Form -->
             <div id="media-url-panel" class="no-print hidden mb-6 rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-3">
               <p class="text-xs font-semibold text-slate-700">
-                Link a file uploaded to GitHub (e.g., <code class="bg-white px-1.5 py-0.5 rounded border">foto1.jpg</code> or <code class="bg-white px-1.5 py-0.5 rounded border">video1.mp4</code>) or a public image/video URL:
+                Paste a YouTube link, direct video link (.mp4), or public image URL to publish it for all visitors:
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
-                <input type="text" id="media-url-input" placeholder="foto1.jpg or https://..." class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
-                <input type="text" id="media-caption-input" placeholder="Caption (e.g., Team Arañita batting)" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
+                <input type="url" id="media-url-input" placeholder="https://youtube.com/watch?v=... or https://.../video.mp4" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
+                <input type="text" id="media-caption-input" placeholder="Caption (e.g., Home run at UdeA synthetic field)" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
                 <button type="button" onclick="addMediaByUrl()" class="sm:col-span-2 px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer">
-                  Add
+                  Publish
                 </button>
               </div>
             </div>
 
-            <!-- Dynamic Persistent Media Grid -->
-            <div id="persistent-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-              <!-- Populated from PUBLIC_EVENT_MEDIA + IndexedDB -->
+            <!-- Dynamic Shared Media Grid -->
+            <div id="shared-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              <!-- Populated in real time across all devices -->
             </div>
 
-            <!-- Hidden single-slot file input for clicking individual frames -->
-            <input type="file" id="single-media-input" accept="image/*,video/*" class="hidden" onchange="handleSingleMediaUpload(event)">
+            <!-- Hidden single-slot photo input -->
+            <input type="file" id="single-photo-input" accept="image/*" class="hidden" onchange="handleSinglePhotoUpload(event)">
           </section>
 
         </div>
       </article>
 
-      <!-- Right Sidebar: Spectator Comments Section -->
+      <!-- Right Sidebar: Shared Spectator Comments Section -->
       <aside aria-labelledby="comments-heading" class="lg:col-span-4 lg:sticky lg:top-24 bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
         <div class="h-2 bg-gradient-to-r from-udea-emerald to-udea-green"></div>
         <div class="p-5 sm:p-6">
           <div class="flex items-center justify-between gap-2 mb-1">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Campus Community</span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Live Campus Wall</span>
             <span id="comments-count-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-udea-light text-udea-green">2</span>
           </div>
           <h2 id="comments-heading" class="font-serif text-xl font-bold text-slate-900">
             Spectator Comments
           </h2>
           <p class="text-xs text-slate-500 mt-1 mb-5">
-            Share your thoughts, cheer for your favorite team, or leave a message about the UdeA Softball Festival.
+            Share your thoughts, cheer for your favorite team, or leave a message visible to everyone.
           </p>
 
           <!-- Add Spectator Comment Form -->
@@ -543,15 +536,15 @@
             </div>
 
             <div>
-              <label for="spectator-team" class="block text-xs font-semibold text-slate-700 mb-1">Supporting / Role (Optional)</label>
+              <label for="spectator-team" class="block text-xs font-semibold text-slate-700 mb-1">Supporting / Role</label>
               <select 
                 id="spectator-team" 
                 class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-udea-green"
               >
                 <option value="UdeA Spectator">UdeA Spectator</option>
-                <option value="Team Arañita">Fan — Team Arañita</option>
-                <option value="Team Smirnoff">Fan — Team Smirnoff</option>
-                <option value="Team Águilas">Fan — Team Águilas</option>
+                <option value="Fan — Team Arañita">Fan — Team Arañita</option>
+                <option value="Fan — Team Smirnoff">Fan — Team Smirnoff</option>
+                <option value="Fan — Team Águilas">Fan — Team Águilas</option>
                 <option value="Student Athlete">Student Athlete</option>
               </select>
             </div>
@@ -568,7 +561,7 @@
               ></textarea>
             </div>
 
-            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs sm:text-sm font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
+            <button type="submit" id="post-comment-btn" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs sm:text-sm font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
               </svg>
@@ -578,7 +571,7 @@
 
           <!-- Comments Feed -->
           <div id="spectator-comments-list" class="mt-5 space-y-3.5 max-h-[30rem] overflow-y-auto pr-1">
-            <!-- Rendered dynamically via JS -->
+            <!-- Rendered dynamically via real-time sync -->
           </div>
         </div>
       </aside>
@@ -623,159 +616,339 @@
     </div>
   </div>
 
-  <!-- Interactive JavaScript for Persistent Media (IndexedDB), Audio/Vocaroo & Comments -->
-  <script>
-    // =========================================================================
-    // 5. PERSISTENT EVENT PHOTOS & VIDEOS GALLERY (PUBLIC REPO + LOCAL)
-    // =========================================================================
-    // IMPORTANT FOR RENDER / GITHUB:
-    // Put your photo/video filenames here (after uploading them to your GitHub repo)
-    // so EVERY visitor on any device sees them automatically!
-    // Example:
-    // { src: 'foto1.jpg', type: 'image/jpeg', caption: 'Opening match at Cancha Sintética UdeA' },
-    // { src: 'video1.mp4', type: 'video/mp4', caption: 'Highlights from Thursday game' },
-    const PUBLIC_EVENT_MEDIA = [
-      // Add your GitHub repo image/video filenames or public URLs here
-    ];
+  <!-- Real-Time Cloud Synchronization Module -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      addDoc,
+      updateDoc,
+      deleteDoc,
+      onSnapshot,
+      collection
+    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'udea-softball-festival';
+    const rawConfig = typeof __firebase_config !== 'undefined' ? __firebase_config : null;
+
+    let db = null;
+    let auth = null;
+    let currentUser = null;
+    let sharedGalleryItems = [];
+    let sharedComments = [];
+    let targetSlotIndex = null;
 
     const DEFAULT_CAPTIONS = [
       'Opening match at the UdeA synthetic field.',
       'Arañita, Smirnoff, and Águilas in action.',
       'Teamwork and student camaraderie on campus.'
     ];
-    let targetSlotId = null;
 
-    function toggleMediaUrlForm() {
-      document.getElementById('media-url-panel').classList.toggle('hidden');
+    const SEED_COMMENTS = [
+      {
+        id: 'seed-1',
+        name: 'Laura Restrepo',
+        team: 'Fan — Team Águilas',
+        message: 'Great atmosphere every Thursday at 2:00 p.m.! Love seeing new students learning softball at the synthetic field.',
+        date: 'UdeA Campus',
+        createdAt: 1
+      },
+      {
+        id: 'seed-2',
+        name: 'Mateo Ríos',
+        team: 'UdeA Spectator',
+        message: 'Excited for the final on November 26! Great article by Alejandro and Wendy.',
+        date: 'UdeA Campus',
+        createdAt: 2
+      }
+    ];
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = String(text ?? '');
+      return div.innerHTML;
     }
 
-    async function addMediaByUrl() {
-      const urlInput = document.getElementById('media-url-input');
-      const capInput = document.getElementById('media-caption-input');
-      const url = urlInput.value.trim();
-      if (!url) return;
+    function showGalleryBanner(message, isError = false) {
+      const banner = document.getElementById('gallery-status-banner');
+      const textEl = document.getElementById('gallery-status-text');
+      if (!banner || !textEl) return;
+      textEl.textContent = message;
+      banner.classList.remove('hidden', 'bg-udea-light', 'text-udea-dark', 'border-udea-green/25', 'bg-red-50', 'text-red-700', 'border-red-200');
+      if (isError) {
+        banner.classList.add('bg-red-50', 'text-red-700', 'border-red-200');
+      } else {
+        banner.classList.add('bg-udea-light', 'text-udea-dark', 'border-udea-green/25');
+      }
+    }
 
-      const isVideo = /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(url);
-      const id = `url-${Date.now()}`;
-      await dbPut(STORE_GALLERY, {
-        id,
-        name: url,
-        type: isVideo ? 'video/mp4' : 'image/jpeg',
-        url,
-        caption: capInput.value.trim() || url,
-        order: Date.now()
+    window.hideGalleryBanner = function () {
+      const banner = document.getElementById('gallery-status-banner');
+      if (banner) banner.classList.add('hidden');
+    };
+
+    // Compress uploaded image via Canvas so it fits cleanly in cloud document (< 250 KB)
+    function compressImageToDataUrl(file, maxDimension = 960, quality = 0.72) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const img = new Image();
+          img.onload = () => {
+            let { width, height } = img;
+            if (width > maxDimension || height > maxDimension) {
+              if (width > height) {
+                height = Math.round((height * maxDimension) / width);
+                width = maxDimension;
+              } else {
+                width = Math.round((width * maxDimension) / height);
+                height = maxDimension;
+              }
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            const dataUrl = canvas.toDataURL('image/jpeg', quality);
+            resolve(dataUrl);
+          };
+          img.onerror = () => reject(new Error('Invalid image file'));
+          img.src = reader.result;
+        };
+        reader.onerror = () => reject(new Error('Could not read file'));
+        reader.readAsDataURL(file);
       });
-
-      urlInput.value = '';
-      capInput.value = '';
-      await renderPersistentGallery();
     }
 
-    function triggerSlotPicker(slotId) {
-      targetSlotId = slotId;
-      document.getElementById('single-media-input').click();
+    function parseVideoEmbed(url) {
+      const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+      if (ytMatch) {
+        return {
+          kind: 'youtube',
+          embedUrl: `https://www.youtube.com/embed/${ytMatch[1]}`
+        };
+      }
+      if (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(url)) {
+        return { kind: 'video', embedUrl: url };
+      }
+      return { kind: 'image', embedUrl: url };
     }
 
-    async function renderPersistentGallery() {
-      const grid = document.getElementById('persistent-media-grid');
-      if (!grid) return;
+    // Lightbox Functions
+    window.openLightbox = function (src, caption, kind = 'image') {
+      const modal = document.getElementById('lightbox-modal');
+      const wrapper = document.getElementById('lightbox-media-wrapper');
+      const captionEl = document.getElementById('lightbox-caption');
+      captionEl.textContent = caption || 'Tournament Visual';
 
-      let savedItems = [];
-      try {
-        savedItems = await dbGetAll(STORE_GALLERY);
-        savedItems.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-      } catch (e) {}
-
-      // Combine public repository media (visible to all visitors) + local device uploads
-      const publicItems = PUBLIC_EVENT_MEDIA.map((m, idx) => ({
-        id: `public-${idx}`,
-        isPublic: true,
-        url: m.src,
-        type: m.type || (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(m.src) ? 'video/mp4' : 'image/jpeg'),
-        caption: m.caption || `Event Media ${idx + 1}`,
-        order: -100 + idx
-      }));
-
-      const allSaved = [...publicItems, ...savedItems];
-      const bySlot = new Map(allSaved.map(item => [item.id, item]));
-      const slotsToRender = [];
-
-      // First place public items, then fill up to 3 base slots
-      for (const pub of publicItems) {
-        slotsToRender.push(pub);
-        bySlot.delete(pub.id);
+      if (kind === 'youtube') {
+        wrapper.innerHTML = `<iframe src="${escapeHtml(src)}" class="w-full max-w-3xl aspect-video rounded-xl shadow-2xl border border-white/15 bg-black" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      } else if (kind === 'video' || kind === true) {
+        wrapper.innerHTML = `<video src="${escapeHtml(src)}" controls autoplay playsinline class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 bg-black"></video>`;
+      } else {
+        wrapper.innerHTML = `<img src="${escapeHtml(src)}" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">`;
       }
 
-      for (let i = 0; i < 3; i++) {
-        const slotId = `slot-${i}`;
-        if (bySlot.has(slotId)) {
-          slotsToRender.push(bySlot.get(slotId));
-          bySlot.delete(slotId);
-        } else if (slotsToRender.length < 3) {
-          slotsToRender.push({
-            id: slotId,
-            empty: true,
-            index: i,
-            caption: DEFAULT_CAPTIONS[i]
-          });
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.forceCloseLightbox = function () {
+      const modal = document.getElementById('lightbox-modal');
+      const wrapper = document.getElementById('lightbox-media-wrapper');
+      modal.classList.add('hidden');
+      wrapper.innerHTML = '';
+      document.body.style.overflow = '';
+    };
+
+    window.closeLightbox = function (event) {
+      if (event.target.id === 'lightbox-modal') {
+        window.forceCloseLightbox();
+      }
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') window.forceCloseLightbox();
+    });
+
+    // Audio / Vocaroo UI & Cloud Sync
+    window.toggleAudioEditor = function () {
+      document.getElementById('audio-editor-panel').classList.toggle('hidden');
+    };
+
+    function renderVocarooState(vocarooUrl) {
+      const placeholder = document.getElementById('audio-default-placeholder');
+      const activeBox = document.getElementById('audio-active-container');
+      const statusText = document.getElementById('audio-status-text');
+      const input = document.getElementById('vocaroo-input');
+
+      if (!vocarooUrl) {
+        placeholder.classList.remove('hidden');
+        activeBox.classList.add('hidden');
+        statusText.textContent = 'Space reserved for the article audio recording — Add your Vocaroo link here';
+        return;
+      }
+
+      if (input && document.activeElement !== input) {
+        input.value = vocarooUrl;
+      }
+
+      const match = vocarooUrl.match(/(?:voca\.ro|vocaroo\.com)\/([a-zA-Z0-9]+)/);
+      placeholder.classList.add('hidden');
+      activeBox.classList.remove('hidden');
+
+      if (match && match[1]) {
+        const vocId = match[1];
+        activeBox.innerHTML = `
+          <div class="flex flex-col gap-2">
+            <iframe width="100%" height="60" src="https://vocaroo.com/embed/${vocId}?autoplay=0" frameborder="0" allow="autoplay" class="rounded-lg"></iframe>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span>Vocaroo Audio • Shared with all visitors</span>
+              <a href="${escapeHtml(vocarooUrl)}" target="_blank" rel="noopener noreferrer" class="text-udea-green font-semibold hover:underline">Open on Vocaroo &rarr;</a>
+            </div>
+          </div>
+        `;
+      } else {
+        activeBox.innerHTML = `
+          <div class="flex items-center justify-between gap-3">
+            <span class="text-xs sm:text-sm font-semibold text-slate-800 truncate">${escapeHtml(vocarooUrl)}</span>
+            <a href="${escapeHtml(vocarooUrl)}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shrink-0">Listen to Audio</a>
+          </div>
+        `;
+      }
+      statusText.textContent = 'Article audio recording attached and visible to everyone';
+    }
+
+    window.applyVocarooLink = async function () {
+      const input = document.getElementById('vocaroo-input');
+      const feedback = document.getElementById('audio-feedback');
+      const rawUrl = input.value.trim();
+      if (!rawUrl) return;
+
+      renderVocarooState(rawUrl);
+      if (db && currentUser) {
+        try {
+          const metaRef = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
+          await setDoc(metaRef, { vocarooUrl: rawUrl, updatedAt: Date.now() }, { merge: true });
+          feedback.textContent = 'Vocaroo link published for all devices.';
+          feedback.classList.remove('hidden');
+        } catch (err) {
+          feedback.textContent = 'Could not sync link right now. Please try again.';
+          feedback.classList.remove('hidden');
         }
       }
+    };
 
-      // Append any extra uploaded/URL items
-      for (const extraItem of bySlot.values()) {
-        slotsToRender.push(extraItem);
+    // Organizer Interview Cloud Sync
+    window.saveOrganizerFields = async function (showToast = false) {
+      const nameVal = document.getElementById('organizer-name').value.trim();
+      const opinionVal = document.getElementById('organizer-opinion').value.trim();
+      const statusEl = document.getElementById('organizer-sync-status');
+
+      if (!db || !currentUser) return;
+      try {
+        const metaRef = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
+        await setDoc(metaRef, {
+          organizerName: nameVal,
+          organizerOpinion: opinionVal,
+          updatedAt: Date.now()
+        }, { merge: true });
+        if (showToast && statusEl) {
+          statusEl.textContent = 'Saved & Visible to Everyone!';
+          setTimeout(() => {
+            statusEl.textContent = 'Shared Interview Space';
+          }, 2500);
+        }
+      } catch (err) {}
+    };
+
+    // Gallery Rendering & Cloud Uploads
+    window.toggleMediaUrlForm = function () {
+      document.getElementById('media-url-panel').classList.toggle('hidden');
+    };
+
+    window.triggerSlotPicker = function (slotIdx) {
+      targetSlotIndex = slotIdx;
+      document.getElementById('single-photo-input').click();
+    };
+
+    function renderGallery() {
+      const grid = document.getElementById('shared-media-grid');
+      if (!grid) return;
+
+      const sorted = [...sharedGalleryItems].sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+      const cards = [];
+
+      // Render all uploaded/linked media first
+      sorted.forEach((item, idx) => {
+        cards.push({ empty: false, item, idx });
+      });
+
+      // Keep at least 3 visual frames visible so empty slots invite uploads
+      while (cards.length < 3) {
+        const slotIdx = cards.length;
+        cards.push({
+          empty: true,
+          slotIdx,
+          caption: DEFAULT_CAPTIONS[slotIdx] || 'Event photo or video'
+        });
       }
 
-      grid.innerHTML = slotsToRender.map((item, idx) => {
-        if (item.empty) {
+      grid.innerHTML = cards.map((card, displayIdx) => {
+        if (card.empty) {
           return `
             <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
-              <div onclick="triggerSlotPicker('${item.id}')" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative">
+              <div onclick="triggerSlotPicker(${card.slotIdx})" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative">
                 <div class="w-12 h-12 rounded-full bg-white text-udea-green shadow-2xs border border-slate-200 flex items-center justify-center mb-3 group-hover:scale-105 transition">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v16m8-8H4"/>
                   </svg>
                 </div>
-                <span class="text-sm font-bold text-slate-700">Photo or Video ${idx + 1}</span>
-                <span class="text-xs text-slate-400 mt-1">Click to attach</span>
+                <span class="text-sm font-bold text-slate-700">Photo or Video ${displayIdx + 1}</span>
+                <span class="text-xs text-slate-400 mt-1">Click to upload photo</span>
               </div>
               <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
-                ${escapeHtml(item.caption)}
+                ${escapeHtml(card.caption)}
               </figcaption>
             </figure>
           `;
         }
 
-        const mediaUrl = item.url ? item.url : URL.createObjectURL(item.blob);
-        const isVideo = (item.type || '').startsWith('video/');
-        const safeCaption = escapeHtml(item.caption || item.name || `Event Media ${idx + 1}`);
+        const { item } = card;
+        const safeCaption = escapeHtml(item.caption || `Event Highlight ${displayIdx + 1}`);
+        const safeSrc = escapeHtml(item.src);
+        const kind = item.kind || 'image';
+
+        let mediaHtml = '';
+        if (kind === 'youtube') {
+          mediaHtml = `<iframe src="${safeSrc}" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        } else if (kind === 'video') {
+          mediaHtml = `<video src="${safeSrc}" controls playsinline class="w-full h-full object-cover"></video>`;
+        } else {
+          mediaHtml = `<img src="${safeSrc}" alt="${safeCaption}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x450/e8f5ee/026937?text=UdeA+Softball+Event';">`;
+        }
 
         return `
           <figure class="group relative rounded-2xl border border-slate-200 bg-white shadow-2xs overflow-hidden flex flex-col">
             <div class="aspect-[4/3] w-full bg-slate-900 relative overflow-hidden">
-              ${isVideo
-                ? `<video src="${mediaUrl}" controls playsinline class="w-full h-full object-cover"></video>`
-                : `<img src="${mediaUrl}" alt="${safeCaption}" class="w-full h-full object-cover">`
-              }
+              ${mediaHtml}
               <div class="no-print absolute top-2.5 right-2.5 flex items-center gap-1.5 opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition">
-                <button type="button" onclick="openLightbox('${mediaUrl}', '${safeCaption.replace(/'/g, "\\'")}', ${isVideo})" class="px-2.5 py-1 rounded-lg bg-udea-green text-white text-[11px] font-semibold shadow cursor-pointer">
+                <button type="button" onclick="openLightbox('${safeSrc.replace(/'/g, "\\'")}', '${safeCaption.replace(/'/g, "\\'")}', '${kind}')" class="px-2.5 py-1 rounded-lg bg-udea-green text-white text-[11px] font-semibold shadow cursor-pointer">
                   Expand
                 </button>
-                ${!item.isPublic ? `
-                  <button type="button" onclick="triggerSlotPicker('${item.id}')" class="px-2.5 py-1 rounded-lg bg-white text-slate-800 text-[11px] font-semibold shadow cursor-pointer">
-                    Replace
-                  </button>
-                  <button type="button" onclick="removeMediaItem('${item.id}')" class="px-2 py-1 rounded-lg bg-red-600 text-white text-[11px] font-semibold shadow cursor-pointer" title="Remove">
-                    &times;
-                  </button>
-                ` : ''}
+                <button type="button" onclick="deleteGalleryItem('${item.id}')" class="px-2 py-1 rounded-lg bg-red-600 text-white text-[11px] font-semibold shadow cursor-pointer" title="Delete">
+                  &times;
+                </button>
               </div>
             </div>
             <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center gap-2">
               <input 
                 type="text" 
                 value="${safeCaption}" 
-                ${item.isPublic ? 'readonly' : `onchange="updateMediaCaption('${item.id}', this.value)"`}
+                onchange="updateGalleryCaption('${item.id}', this.value)"
                 aria-label="Media caption"
                 class="w-full text-xs text-slate-700 font-medium bg-transparent border-b border-transparent focus:border-udea-green focus:outline-none py-0.5"
               >
@@ -785,129 +958,102 @@
       }).join('');
     }
 
-    async function saveFileToGallery(slotId, file, orderIndex) {
-      const defaultIdx = parseInt(slotId.replace('slot-', ''), 10);
-      const caption = !isNaN(defaultIdx) && DEFAULT_CAPTIONS[defaultIdx]
-        ? DEFAULT_CAPTIONS[defaultIdx]
-        : file.name.replace(/\.[^/.]+$/, '');
-
-      await dbPut(STORE_GALLERY, {
-        id: slotId,
-        name: file.name,
-        type: file.type,
-        blob: file,
-        caption,
-        order: orderIndex
-      });
+    async function uploadSinglePhotoFile(file, captionOverride) {
+      if (!db || !currentUser) {
+        showGalleryBanner('Connecting to shared gallery... please wait a second and try again.', true);
+        return;
+      }
+      showGalleryBanner('Optimizing and publishing photo for all devices...');
+      try {
+        const compressedDataUrl = await compressImageToDataUrl(file, 960, 0.72);
+        const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
+        await addDoc(colRef, {
+          src: compressedDataUrl,
+          kind: 'image',
+          caption: captionOverride || file.name.replace(/\.[^/.]+$/, ''),
+          createdAt: Date.now()
+        });
+        showGalleryBanner('Photo published! Everyone visiting this page can now see it.');
+      } catch (err) {
+        showGalleryBanner('Could not upload photo. Please try a smaller image.', true);
+      }
     }
 
-    async function handleSingleMediaUpload(event) {
+    window.handleSinglePhotoUpload = async function (event) {
       const file = event.target.files[0];
-      if (file && targetSlotId) {
-        const order = parseInt(targetSlotId.replace('slot-', ''), 10) || Date.now();
-        await saveFileToGallery(targetSlotId, file, order);
-        await renderPersistentGallery();
+      if (file) {
+        const defaultCap = targetSlotIndex !== null && DEFAULT_CAPTIONS[targetSlotIndex]
+          ? DEFAULT_CAPTIONS[targetSlotIndex]
+          : undefined;
+        await uploadSinglePhotoFile(file, defaultCap);
       }
       event.target.value = '';
-    }
+    };
 
-    async function handleMediaUpload(event) {
+    window.handlePhotoUpload = async function (event) {
       const files = Array.from(event.target.files);
-      if (!files.length) return;
-
-      const existing = await dbGetAll(STORE_GALLERY);
-      const usedIds = new Set(existing.map(i => i.id));
-
       for (const file of files) {
-        // Fill empty base slots (slot-0, slot-1, slot-2) first, then create new slots
-        let assignedId = null;
-        let order = Date.now();
-        for (let i = 0; i < 3; i++) {
-          if (!usedIds.has(`slot-${i}`)) {
-            assignedId = `slot-${i}`;
-            order = i;
-            usedIds.add(assignedId);
-            break;
-          }
-        }
-        if (!assignedId) {
-          assignedId = `media-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
-        }
-        await saveFileToGallery(assignedId, file, order);
+        await uploadSinglePhotoFile(file);
       }
-
-      await renderPersistentGallery();
       event.target.value = '';
-    }
+    };
 
-    async function updateMediaCaption(id, newCaption) {
-      const existing = await dbGetAll(STORE_GALLERY);
-      const target = existing.find(i => i.id === id);
-      if (target) {
-        target.caption = newCaption.trim() || target.name;
-        await dbPut(STORE_GALLERY, target);
+    window.addMediaByUrl = async function () {
+      const urlInput = document.getElementById('media-url-input');
+      const capInput = document.getElementById('media-caption-input');
+      const rawUrl = urlInput.value.trim();
+      if (!rawUrl) return;
+
+      if (!db || !currentUser) {
+        showGalleryBanner('Connecting to shared gallery... please wait a second and try again.', true);
+        return;
       }
-    }
 
-    async function removeMediaItem(id) {
-      await dbDelete(STORE_GALLERY, id);
-      await renderPersistentGallery();
-    }
-
-    // =========================================================================
-    // 6. SPECTATOR COMMENTS LOGIC (WITH LOCALSTORAGE PERSISTENCE)
-    // =========================================================================
-    const STORAGE_KEY_COMMENTS = 'udea_softball_spectator_comments_v1';
-    const defaultComments = [
-      {
-        id: 'seed-1',
-        name: 'Laura Restrepo',
-        team: 'Fan — Team Águilas',
-        message: 'Great atmosphere every Thursday at 2:00 p.m.! Love seeing new students learning softball at the synthetic field.',
-        date: 'UdeA Campus'
-      },
-      {
-        id: 'seed-2',
-        name: 'Mateo Ríos',
-        team: 'UdeA Spectator',
-        message: 'Excited for the final on November 26! Great article by Alejandro and Wendy.',
-        date: 'UdeA Campus'
+      const parsed = parseVideoEmbed(rawUrl);
+      try {
+        const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
+        await addDoc(colRef, {
+          src: parsed.embedUrl,
+          kind: parsed.kind,
+          caption: capInput.value.trim() || 'Tournament highlight',
+          createdAt: Date.now()
+        });
+        urlInput.value = '';
+        capInput.value = '';
+        showGalleryBanner('Published! Everyone visiting this page can now watch or view it.');
+      } catch (err) {
+        showGalleryBanner('Could not publish link. Please check the URL and try again.', true);
       }
-    ];
+    };
 
-    function loadSpectatorComments() {
+    window.updateGalleryCaption = async function (docId, newCaption) {
+      if (!db || !currentUser || !docId) return;
       try {
-        const saved = localStorage.getItem(STORAGE_KEY_COMMENTS);
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-        }
-      } catch (e) {}
-      return defaultComments;
-    }
+        const itemRef = doc(db, 'artifacts', appId, 'public', 'data', 'gallery', docId);
+        await updateDoc(itemRef, { caption: newCaption.trim() || 'Tournament highlight' });
+      } catch (err) {}
+    };
 
-    function saveSpectatorComments(comments) {
+    window.deleteGalleryItem = async function (docId) {
+      if (!db || !currentUser || !docId) return;
       try {
-        localStorage.setItem(STORAGE_KEY_COMMENTS, JSON.stringify(comments));
-      } catch (e) {}
-    }
+        const itemRef = doc(db, 'artifacts', appId, 'public', 'data', 'gallery', docId);
+        await deleteDoc(itemRef);
+      } catch (err) {}
+    };
 
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = String(text ?? '');
-      return div.innerHTML;
-    }
-
-    function renderSpectatorComments() {
+    // Spectator Comments Rendering & Cloud Submission
+    function renderComments() {
       const list = document.getElementById('spectator-comments-list');
       const badge = document.getElementById('comments-count-badge');
       if (!list) return;
 
-      const comments = loadSpectatorComments();
-      if (badge) badge.textContent = comments.length;
+      const combined = [...sharedComments].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+      const displayList = combined.length > 0 ? combined : SEED_COMMENTS;
+      if (badge) badge.textContent = displayList.length;
 
-      list.innerHTML = comments.map(item => {
-        const initials = item.name
+      list.innerHTML = displayList.map(item => {
+        const initials = (item.name || 'S')
           .split(' ')
           .filter(Boolean)
           .slice(0, 2)
@@ -936,7 +1082,7 @@
       }).join('');
     }
 
-    function addSpectatorComment(event) {
+    window.addSpectatorComment = async function (event) {
       event.preventDefault();
       const nameInput = document.getElementById('spectator-name');
       const teamInput = document.getElementById('spectator-team');
@@ -947,30 +1093,92 @@
       const message = msgInput.value.trim();
       if (!name || !message) return;
 
-      const now = new Date();
-      const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
-      const comments = loadSpectatorComments();
-      comments.unshift({
-        id: 'c-' + Date.now(),
-        name,
-        team,
-        message,
-        date: dateStr
-      });
+      if (db && currentUser) {
+        try {
+          const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'comments');
+          await addDoc(colRef, {
+            name,
+            team,
+            message,
+            date: dateStr,
+            createdAt: Date.now()
+          });
+          nameInput.value = '';
+          msgInput.value = '';
+        } catch (err) {}
+      }
+    };
 
-      saveSpectatorComments(comments);
-      renderSpectatorComments();
+    // Bootstrap Cloud Auth & Real-Time Listeners
+    async function initSharedCloudSync() {
+      renderGallery();
+      renderComments();
 
-      nameInput.value = '';
-      msgInput.value = '';
+      if (!rawConfig) return;
+
+      try {
+        const firebaseConfig = JSON.parse(rawConfig);
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+
+        // RULE 3: Authenticate FIRST and await before any Firestore queries
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+          const cred = await signInWithCustomToken(auth, __initial_auth_token);
+          currentUser = cred.user;
+        } else {
+          const cred = await signInAnonymously(auth);
+          currentUser = cred.user;
+        }
+
+        if (!currentUser) return;
+
+        // Listener 1: Shared Gallery (RULE 1 strict public path, RULE 2 simple collection query)
+        const galleryCol = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
+        onSnapshot(galleryCol, (snapshot) => {
+          sharedGalleryItems = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderGallery();
+        }, (err) => {
+          console.error('Gallery sync error:', err);
+        });
+
+        // Listener 2: Shared Spectator Comments
+        const commentsCol = collection(db, 'artifacts', appId, 'public', 'data', 'comments');
+        onSnapshot(commentsCol, (snapshot) => {
+          sharedComments = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+          renderComments();
+        }, (err) => {
+          console.error('Comments sync error:', err);
+        });
+
+        // Listener 3: Shared Vocaroo Audio & Organizer Interview
+        const metaDoc = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
+        onSnapshot(metaDoc, (snap) => {
+          if (!snap.exists()) return;
+          const data = snap.data();
+          if (data.vocarooUrl) {
+            renderVocarooState(data.vocarooUrl);
+          }
+          const orgNameEl = document.getElementById('organizer-name');
+          const orgOpEl = document.getElementById('organizer-opinion');
+          if (orgNameEl && document.activeElement !== orgNameEl && typeof data.organizerName === 'string') {
+            orgNameEl.value = data.organizerName;
+          }
+          if (orgOpEl && document.activeElement !== orgOpEl && typeof data.organizerOpinion === 'string') {
+            orgOpEl.value = data.organizerOpinion;
+          }
+        }, (err) => {
+          console.error('Meta sync error:', err);
+        });
+
+      } catch (err) {
+        console.error('Cloud initialization failed:', err);
+      }
     }
 
-    // Initialize all persistent sections on load
-    loadOrganizerFields();
-    restoreSavedAudio();
-    renderPersistentGallery();
-    renderSpectatorComments();
+    initSharedCloudSync();
   </script>
 </body>
 </html>
