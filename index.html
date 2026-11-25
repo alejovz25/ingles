@@ -82,14 +82,14 @@
   </header>
 
   <!-- Main Content Container -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    
-    <!-- Article Sheet -->
-    <article class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Top Decorative Accent Bar -->
-      <div class="h-2 bg-gradient-to-r from-udea-dark via-udea-green to-udea-emerald"></div>
-
+      <!-- Left / Main Column: Article Sheet -->
+      <article class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+      
+        <!-- Top Decorative Accent Bar -->
+        <div class="h-2 bg-gradient-to-r from-udea-dark via-udea-green to-udea-emerald"></div>
       <div class="p-6 sm:p-10 md:p-12">
         
         <!-- Category Tag & Venue Badge -->
@@ -102,84 +102,84 @@
             Synthetic Sports Field • Medellín, Colombia
           </span>
         </div>
+      </article>
 
-        <!-- Main Article Headline -->
-        <h1 class="font-serif text-2xl sm:text-4xl md:text-[2.45rem] font-black text-slate-900 leading-tight tracking-tight mb-6">
-          THE UNIVERSITY SOFTBALL FESTIVAL: SPORT AND TEAMWORK
-        </h1>
-
-        <!-- Author Byline Box -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4 px-5 rounded-xl bg-slate-50 border border-slate-200/80 mb-8">
-          <div class="flex items-center gap-3.5">
-            <!-- Dual Author Initials Avatar -->
-            <div class="flex -space-x-2 shrink-0">
-              <div class="w-10 h-10 rounded-full bg-udea-green text-white font-bold text-sm flex items-center justify-center ring-2 ring-white shadow-sm">
-                AV
-              </div>
-              <div class="w-10 h-10 rounded-full bg-udea-dark text-white font-bold text-sm flex items-center justify-center ring-2 ring-white shadow-sm">
-                W
-              </div>
-            </div>
-            <div>
-              <p class="text-sm sm:text-base font-bold text-slate-900">
-                By Alejandro Vergara &amp; Wendy
-              </p>
-              <p class="text-xs text-slate-500">
-                Universidad de Antioquia • Student Correspondents
-              </p>
-            </div>
+      <!-- Right Sidebar: Spectator Comments Section -->
+      <aside aria-labelledby="comments-heading" class="lg:col-span-4 lg:sticky lg:top-24 bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+        <div class="h-2 bg-gradient-to-r from-udea-emerald to-udea-green"></div>
+        <div class="p-5 sm:p-6">
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Campus Community</span>
+            <span id="comments-count-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-udea-light text-udea-green">2</span>
           </div>
-          <div class="flex items-center gap-2 text-xs font-semibold text-udea-green bg-udea-light/90 px-3 py-1.5 rounded-lg self-start sm:self-auto">
-            <span>#SOYUdeA • Torneo Sofball</span>
+          <h2 id="comments-heading" class="font-serif text-xl font-bold text-slate-900">
+            Spectator Comments
+          </h2>
+          <p class="text-xs text-slate-500 mt-1 mb-5">
+            Share your thoughts, cheer for your favorite team, or leave a message about the UdeA Softball Festival.
+          </p>
+
+          <!-- Add Spectator Comment Form -->
+          <form id="spectator-comment-form" onsubmit="addSpectatorComment(event)" class="no-print space-y-3 pb-5 border-b border-slate-200/80">
+            <div>
+              <label for="spectator-name" class="block text-xs font-semibold text-slate-700 mb-1">Name</label>
+              <input 
+                type="text" 
+                id="spectator-name" 
+                required 
+                maxlength="60"
+                placeholder="e.g., Camilo Gómez"
+                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-udea-green"
+              >
+            </div>
+
+            <div>
+              <label for="spectator-team" class="block text-xs font-semibold text-slate-700 mb-1">Supporting / Role (Optional)</label>
+              <select 
+                id="spectator-team" 
+                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-udea-green"
+              >
+                <option value="UdeA Spectator">UdeA Spectator</option>
+                <option value="Team Arañita">Fan — Team Arañita</option>
+                <option value="Team Smirnoff">Fan — Team Smirnoff</option>
+                <option value="Team Águilas">Fan — Team Águilas</option>
+                <option value="Student Athlete">Student Athlete</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="spectator-message" class="block text-xs font-semibold text-slate-700 mb-1">Comment</label>
+              <textarea 
+                id="spectator-message" 
+                rows="3" 
+                required 
+                maxlength="320"
+                placeholder="Write your comment about the games..."
+                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-udea-green leading-relaxed"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs sm:text-sm font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+              </svg>
+              <span>Post Comment</span>
+            </button>
+          </form>
+
+          <!-- Comments Feed -->
+          <div id="spectator-comments-list" class="mt-5 space-y-3.5 max-h-[30rem] overflow-y-auto pr-1">
+            <!-- Rendered dynamically via JS -->
           </div>
         </div>
+      </aside>
 
-        <!-- HERO SHOWCASE: OFFICIAL EVENT POSTER + COMPLETE 6-MATCH SCHEDULE -->
-        <section aria-labelledby="poster-schedule-heading" class="mb-10 rounded-2xl bg-udea-surface border border-slate-200/90 p-5 sm:p-6 shadow-xs">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            
-            <!-- Left Column: Official Event Poster (Click to Zoom) -->
-            <div class="lg:col-span-5 flex flex-col">
-              <div class="flex items-center justify-between mb-2.5">
-                <span class="text-xs font-bold uppercase tracking-wider text-udea-green flex items-center gap-1.5">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
-                  Official Event Poster
-                </span>
-                <button type="button" onclick="openLightbox('image_9b2b5c.jpg', 'Torneo Sofball UdeA — Official Event Poster')" class="text-xs font-semibold text-udea-green hover:underline flex items-center gap-1 cursor-pointer no-print">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
-                  </svg>
-                  <span>Zoom Poster</span>
-                </button>
-              </div>
+    </div>
+  </main>
 
-              <div onclick="openLightbox('image_9b2b5c.jpg', 'Torneo Sofball UdeA — Official Event Poster')" class="group relative rounded-xl overflow-hidden border border-slate-300 bg-white shadow-md cursor-zoom-in">
-                <img 
-                  src="image_9b2b5c.jpg" 
-                  alt="Torneo Sofball Universidad de Antioquia Official Poster" 
-                  class="w-full h-auto object-cover group-hover:scale-[1.015] transition duration-300"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x900/026937/ffffff?text=Torneo+Sofball+UdeA+Poster';"
-                >
-                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-3.5 flex items-center justify-between text-white opacity-95 group-hover:opacity-100 transition no-print">
-                  <span class="text-xs font-medium">Deportivo • Inclusivo • Universitario</span>
-                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-white/20 backdrop-blur-xs px-2.5 py-1 rounded-md">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
-                    </svg>
-                    Full View
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Tournament Format & Complete 6-Game Schedule Card -->
-            <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-udea-green">Official Tournament Guide</span>
-                <h2 id="poster-schedule-heading" class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">
-                  Tournament Schedule &amp; Matchups
+  <!-- Institutional Footer with Official UdeA Logo -->
+  <footer class="bg-white border-t border-slate-200 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-600 mt-1">
                   Double round-robin format (6 regular games) followed by the Grand Final between 1st and 2nd place at <strong class="text-slate-800">Cancha Sintética UdeA</strong>.
@@ -755,6 +755,119 @@
       });
       event.target.value = '';
     }
+
+    // Spectator Comments Logic (with localStorage persistence)
+    const STORAGE_KEY_COMMENTS = 'udea_softball_spectator_comments_v1';
+    const defaultComments = [
+      {
+        id: 'seed-1',
+        name: 'Laura Restrepo',
+        team: 'Fan — Team Águilas',
+        message: 'Great atmosphere every Thursday at 2:00 p.m.! Love seeing new students learning softball at the synthetic field.',
+        date: 'UdeA Campus'
+      },
+      {
+        id: 'seed-2',
+        name: 'Mateo Ríos',
+        team: 'UdeA Spectator',
+        message: 'Excited for the final on November 26! Great article by Alejandro and Wendy.',
+        date: 'UdeA Campus'
+      }
+    ];
+
+    function loadSpectatorComments() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY_COMMENTS);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+      return defaultComments;
+    }
+
+    function saveSpectatorComments(comments) {
+      try {
+        localStorage.setItem(STORAGE_KEY_COMMENTS, JSON.stringify(comments));
+      } catch (e) {}
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function renderSpectatorComments() {
+      const list = document.getElementById('spectator-comments-list');
+      const badge = document.getElementById('comments-count-badge');
+      if (!list) return;
+
+      const comments = loadSpectatorComments();
+      if (badge) badge.textContent = comments.length;
+
+      list.innerHTML = comments.map(item => {
+        const initials = item.name
+          .split(' ')
+          .filter(Boolean)
+          .slice(0, 2)
+          .map(part => part[0].toUpperCase())
+          .join('') || 'S';
+
+        return `
+          <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-3.5 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-8 h-8 rounded-full bg-udea-green text-white text-xs font-bold flex items-center justify-center shrink-0">
+                  ${escapeHtml(initials)}
+                </div>
+                <div class="min-w-0">
+                  <p class="text-xs font-bold text-slate-900 truncate">${escapeHtml(item.name)}</p>
+                  <span class="inline-block text-[10px] font-semibold text-udea-green bg-udea-light px-2 py-0.5 rounded-md">
+                    ${escapeHtml(item.team)}
+                  </span>
+                </div>
+              </div>
+              <span class="text-[10px] text-slate-400 shrink-0">${escapeHtml(item.date)}</span>
+            </div>
+            <p class="text-xs text-slate-700 leading-relaxed break-words">${escapeHtml(item.message)}</p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addSpectatorComment(event) {
+      event.preventDefault();
+      const nameInput = document.getElementById('spectator-name');
+      const teamInput = document.getElementById('spectator-team');
+      const msgInput = document.getElementById('spectator-message');
+
+      const name = nameInput.value.trim();
+      const team = teamInput.value;
+      const message = msgInput.value.trim();
+      if (!name || !message) return;
+
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+      const comments = loadSpectatorComments();
+      comments.unshift({
+        id: 'c-' + Date.now(),
+        name,
+        team,
+        message,
+        date: dateStr
+      });
+
+      saveSpectatorComments(comments);
+      renderSpectatorComments();
+
+      nameInput.value = '';
+      msgInput.value = '';
+    }
+
+    // Initialize comments on load
+    renderSpectatorComments();
   </script>
 </body>
 </html>
