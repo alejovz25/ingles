@@ -1,448 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The University Softball Festival: Sport and Teamwork | UdeA</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Merriweather (Editorial Headlines) & Inter (Clean Body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind Custom Configuration for UdeA Institutional Palette & Fonts -->
-  <script>
-    if (typeof tailwind !== 'undefined') {
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              udea: {
-                green: '#026937',
-                emerald: '#0a8749',
-                dark: '#004D29',
-                light: '#e8f5ee',
-                surface: '#f4f6f5'
-              }
-            },
-            fontFamily: {
-              serif: ['Merriweather', 'Georgia', 'serif'],
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            }
-          }
-        }
-      };
-    }
-  </script>
-  <style>
-    @media print {
-      .no-print { display: none !important; }
-      body { background: #ffffff !important; }
-    }
-  </style>
-</head>
-<body class="bg-udea-surface text-slate-800 font-sans antialiased selection:bg-udea-green selection:text-white">
-
-  <!-- Institutional Top Bar / Header -->
-  <header class="bg-udea-green text-white shadow-md sticky top-0 z-30 border-b border-udea-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
-      
-      <!-- Official Universidad de Antioquia Logo Card & Section Title -->
-      <div class="flex items-center gap-3.5 sm:gap-4">
-        <div class="bg-white rounded-xl px-3 py-1.5 shadow-sm border border-white/40 flex items-center justify-center shrink-0">
-          <img 
-            src="image_9b2b00.png" 
-            alt="Universidad de Antioquia Official Logo" 
-            class="h-10 sm:h-11 w-auto object-contain"
-            onerror="this.onerror=null; this.src='https://placehold.co/220x64/ffffff/026937?text=UNIVERSIDAD+DE+ANTIOQUIA';"
-          >
-        </div>
-        <div class="hidden md:block border-l border-white/25 pl-4">
-          <span class="block text-[11px] uppercase tracking-widest text-emerald-200 font-semibold">Student Journalism</span>
-          <h2 class="text-sm lg:text-base font-bold tracking-tight text-white leading-tight">Sports &amp; Campus Life</h2>
-        </div>
-      </div>
-
-      <!-- Right Header Live Sync Indicator & Print Action -->
-      <div class="flex items-center gap-2.5 no-print">
-        <span id="cloud-sync-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/15 text-white border border-white/20">
-          <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
-          <span>Live Shared Edition</span>
-        </span>
-        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold bg-white text-udea-green hover:bg-emerald-50 transition shadow-sm cursor-pointer" title="Print or Save as PDF">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
-          </svg>
-          <span class="hidden sm:inline">Print Article</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- Left / Main Column: Article Sheet -->
-      <article class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
-      
-        <!-- Top Decorative Accent Bar -->
-        <div class="h-2 bg-gradient-to-r from-udea-dark via-udea-green to-udea-emerald"></div>
-        <div class="p-6 sm:p-10 md:p-12">
-        
-          <!-- Category Tag & Venue Badge -->
-          <div class="flex flex-wrap items-center gap-3 mb-5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-udea-light text-udea-green">
-              <span class="w-2 h-2 rounded-full bg-udea-green"></span>
-              Campus Sports
-            </span>
-            <span class="text-xs sm:text-sm text-slate-500 font-medium">
-              Synthetic Sports Field • Medellín, Colombia
-            </span>
-          </div>
-
-          <!-- Main Headline -->
-          <h1 class="font-serif text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-900 leading-[1.15] tracking-tight mb-4">
-            THE UNIVERSITY SOFTBALL FESTIVAL: SPORT AND TEAMWORK
-          </h1>
-
-          <!-- Subtitle / Lead Summary -->
-          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
-            Students from across the Universidad de Antioquia gather every Thursday at the synthetic field to compete, learn, and strengthen camaraderie through softball.
-          </p>
-
-          <!-- Authors & Publication Meta Bar -->
-          <div class="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-xl bg-slate-50 border border-slate-200/80 mb-8">
-            <div class="flex items-center gap-3">
-              <div class="flex -space-x-2">
-                <span class="w-9 h-9 rounded-full bg-udea-green text-white font-bold text-xs flex items-center justify-center ring-2 ring-white">AV</span>
-                <span class="w-9 h-9 rounded-full bg-udea-dark text-white font-bold text-xs flex items-center justify-center ring-2 ring-white">W</span>
-              </div>
-              <div>
-                <p class="text-xs sm:text-sm font-bold text-slate-900">By Alejandro Vergara &amp; Wendy</p>
-                <p class="text-[11px] sm:text-xs text-slate-500">Universidad de Antioquia • Sports Coverage</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-semibold text-udea-green bg-udea-light px-3 py-1.5 rounded-lg">
-              <span>Oct 22 – Nov 26</span>
-              <span>•</span>
-              <span>Thursdays 2:00 p.m.</span>
-            </div>
-          </div>
-
-          <!-- OFFICIAL POSTER & SCHEDULE OVERVIEW CARD -->
-          <section aria-label="Official Tournament Poster and Schedule" class="mb-10 rounded-2xl bg-slate-50 border border-slate-200/90 p-5 sm:p-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-              
-              <!-- Official Poster Image with Zoom Lightbox -->
-              <div class="md:col-span-5">
-                <div onclick="openLightbox('image_9b2b5c.jpg', 'Official Poster — Torneo Sofball UdeA', false)" class="group relative rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white cursor-zoom-in">
-                  <img 
-                    src="image_9b2b5c.jpg" 
-                    alt="Torneo Sofball Universidad de Antioquia Official Poster" 
-                    class="w-full h-auto object-cover group-hover:scale-[1.02] transition duration-300"
-                    onerror="this.onerror=null; this.src='https://placehold.co/420x600/026937/ffffff?text=TORNEO+SOFTBALL+UdeA';"
-                  >
-                  <div class="no-print absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-black/70 text-white text-[11px] font-semibold backdrop-blur-xs">
-                    Click to zoom
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tournament Format, Teams & 6-Game Schedule -->
-              <div class="md:col-span-7 space-y-4">
-                <div>
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Official Tournament Guide</span>
-                  <h2 class="font-serif text-xl font-bold text-slate-900 mt-0.5">
-                    Teams &amp; Match Schedule
-                  </h2>
-                  <p class="text-xs sm:text-sm text-slate-600 mt-1">
-                    Double round-robin format (6 regular games) followed by the Grand Final between 1st and 2nd place at <strong class="text-slate-800">Cancha Sintética UdeA</strong>.
-                  </p>
-                </div>
-
-                <!-- Participating Teams Badges -->
-                <div class="bg-white rounded-xl p-3.5 border border-slate-200/90 flex flex-wrap items-center justify-between gap-2">
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Teams:</span>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">1. Arañita</span>
-                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">2. Smirnoff</span>
-                    <span class="px-3 py-1 rounded-lg bg-udea-light text-udea-dark font-bold text-xs border border-udea-green/20">3. Águilas</span>
-                  </div>
-                </div>
-
-                <!-- 6-Match Programación Table -->
-                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs">
-                  <div class="bg-udea-dark text-white px-4 py-2.5 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
-                    <span>Programación • Thursdays</span>
-                    <span class="text-emerald-200">2:00 P.M.</span>
-                  </div>
-                  <div class="divide-y divide-slate-100 text-xs sm:text-sm">
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">1</span>
-                        <span class="font-semibold text-slate-700">Thu, Oct 22</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
-                      </div>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">2</span>
-                        <span class="font-semibold text-slate-700">Thu, Oct 29</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
-                      </div>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">3</span>
-                        <span class="font-semibold text-slate-700">Thu, Nov 5</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
-                      </div>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">4</span>
-                        <span class="font-semibold text-slate-700">Thu, Nov 12</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        ARAÑITA <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-udea-green">ÁGUILAS</span>
-                      </div>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">5</span>
-                        <span class="font-semibold text-slate-700">Thu, Nov 19</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        <span class="text-red-700">SMIRNOFF</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> ARAÑITA
-                      </div>
-                    </div>
-                    <div class="px-4 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-6 h-6 rounded-md bg-udea-light text-udea-green font-bold text-xs flex items-center justify-center shrink-0">6</span>
-                        <span class="font-semibold text-slate-700">Thu, Nov 26</span>
-                      </div>
-                      <div class="font-bold text-slate-900 text-right">
-                        <span class="text-udea-green">ÁGUILAS</span> <span class="mx-1 px-1.5 py-0.5 rounded bg-slate-800 text-white text-[10px]">VS</span> <span class="text-red-700">SMIRNOFF</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Grand Final Banner -->
-                  <div class="bg-udea-light border-t border-udea-green/25 px-4 py-3 flex flex-wrap items-center justify-between gap-2">
-                    <div class="flex items-center gap-2">
-                      <span class="px-2 py-0.5 rounded bg-udea-green text-white text-[11px] font-bold uppercase">Final</span>
-                      <span class="text-xs font-bold text-slate-800">Thursday, Nov 26 (After Match 6)</span>
-                    </div>
-                    <span class="text-xs font-extrabold text-udea-dark">1st Place VS 2nd Place</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </section>
-
-          <!-- SHARED AUDIO RECORDING SECTION (VOCAROO / AUDIO LINK) -->
-          <section aria-labelledby="audio-heading" class="mb-10 rounded-2xl bg-gradient-to-br from-udea-light/90 to-emerald-50/50 border border-udea-green/25 p-5 sm:p-6 shadow-xs">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-              <div class="flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-udea-green text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h2 id="audio-heading" class="text-base font-bold text-slate-900">Audio Recording (Vocaroo)</h2>
-                  <p id="audio-status-text" class="text-xs sm:text-sm text-slate-600">Space reserved for the article audio recording — Add your Vocaroo link here</p>
-                </div>
-              </div>
-              <button type="button" onclick="toggleAudioEditor()" id="toggle-audio-btn" class="no-print inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white text-udea-green border border-udea-green/30 hover:bg-udea-green hover:text-white transition shadow-2xs self-start sm:self-auto cursor-pointer">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-                </svg>
-                <span>Attach Vocaroo Link</span>
-              </button>
-            </div>
-
-            <!-- Default Visual Placeholder Bar -->
-            <div id="audio-default-placeholder" class="bg-white/90 rounded-xl p-4 border border-dashed border-udea-green/40 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div class="flex items-center gap-3 w-full">
-                <div class="w-9 h-9 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <div class="h-2 bg-slate-200 rounded-full overflow-hidden">
-                    <div class="w-1/4 h-full bg-udea-green/40 rounded-full"></div>
-                  </div>
-                  <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
-                    <span>0:00</span>
-                    <span>Narrated by Alejandro Vergara &amp; Wendy</span>
-                    <span>--:--</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Dynamic Active Audio / Vocaroo Container -->
-            <div id="audio-active-container" class="hidden mt-3 bg-white rounded-xl p-4 border border-udea-green/30 shadow-2xs"></div>
-
-            <!-- Collapsible Input Panel to Paste Vocaroo URL -->
-            <div id="audio-editor-panel" class="no-print hidden mt-4 pt-4 border-t border-udea-green/15 space-y-2">
-              <label for="vocaroo-input" class="block text-xs font-semibold text-slate-700">Paste Vocaroo Link (e.g., https://voca.ro/...) — Saves for all visitors:</label>
-              <div class="flex flex-col sm:flex-row gap-2">
-                <input type="url" id="vocaroo-input" placeholder="https://voca.ro/1a2b3c4d5e" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
-                <button type="button" onclick="applyVocarooLink()" class="px-4 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
-                  Save &amp; Publish Audio
-                </button>
-              </div>
-              <p id="audio-feedback" class="text-xs text-udea-green font-medium hidden"></p>
-            </div>
-          </section>
-
-          <!-- ARTICLE BODY CONTENT -->
-          <div class="space-y-6 text-slate-700 text-base sm:text-[1.0625rem] leading-relaxed">
-            
-            <p class="first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:text-udea-green first-letter:float-left first-letter:mr-3 first-letter:leading-none">
-              The University of Antioquia organizes a softball festival for students who enjoy sports and teamwork. This event is a good opportunity to play, have fun and meet new people. The tournament takes place at the university's synthetic sports field.
-            </p>
-
-            <p>
-              This year, three teams are participating in the festival: <strong class="font-semibold text-slate-900">Arañita</strong>, <strong class="font-semibold text-slate-900">Smirnoff</strong> and <strong class="font-semibold text-slate-900">Águilas</strong>. The tournament has six games. The teams play against each other two times. At the end, the first and second teams play in the final to decide the winner.
-            </p>
-
-            <p>
-              The games take place on Thursdays at 2:00 p.m. The dates are October 22 and 29, and November 5, 12, 19 and 26. All the games are played at the university's synthetic field.
-            </p>
-
-            <p>
-              One important thing about this festival is that it is open to different students. Some players belong to the university's representative and development softball teams. However, any student who is interested in playing can also participate. This gives new players the opportunity to learn and enjoy this sport.
-            </p>
-
-            <p>
-              During the games, players hit the ball, run between bases, catch the ball and work together to score points. They also support their teammates and try to win every game. Other students can watch the matches and support their favorite teams.
-            </p>
-
-            <!-- SECTION: A PARTICIPANT'S EXPERIENCE -->
-            <section class="pt-4">
-              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
-                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-                <span>A PARTICIPANT'S EXPERIENCE</span>
-              </h2>
-
-              <p class="mb-4">One participant said:</p>
-
-              <blockquote class="relative rounded-2xl bg-udea-light/65 border-l-4 border-udea-green p-6 sm:p-7 my-4">
-                <svg class="w-8 h-8 text-udea-green/25 mb-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
-                <p class="font-serif italic text-lg sm:text-xl text-slate-800 leading-relaxed">
-                  "This festival helps us become more familiar with the sport and have better teamwork. We can learn new things, practice our skills and work together with other students. It is also a good opportunity to meet new people and enjoy softball."
-                </p>
-                <footer class="mt-3 text-xs font-bold uppercase tracking-wider text-udea-green">
-                  — Student Softball Participant, UdeA
-                </footer>
-              </blockquote>
-            </section>
-
-            <!-- SECTION: THE ORGANIZER'S OPINION -->
-            <section class="pt-4">
-              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
-                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-                <span>THE ORGANIZER'S OPINION</span>
-              </h2>
-
-              <p class="mb-5">
-                We also want to know the opinion of the coach or organizer about this festival.
-              </p>
-
-              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-6 space-y-5 shadow-2xs">
-                <div class="flex items-center justify-between gap-2 no-print">
-                  <span id="organizer-sync-status" class="text-xs font-semibold uppercase tracking-wider text-udea-green">Shared Interview Space</span>
-                  <button type="button" onclick="saveOrganizerFields(true)" class="px-3 py-1 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer">Save for Everyone</button>
-                </div>
-
-                <div>
-                  <label for="organizer-name" class="block text-sm font-bold text-slate-900 mb-1.5">
-                    Coach or organizer:
-                  </label>
-                  <input 
-                    type="text" 
-                    id="organizer-name" 
-                    onblur="saveOrganizerFields(false)"
-                    placeholder="__________________________________________________"
-                    class="w-full bg-white border-b-2 border-slate-300 focus:border-udea-green rounded-t-lg px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none transition"
-                  >
-                </div>
-
-                <div>
-                  <label for="organizer-opinion" class="block text-sm font-bold text-slate-900 mb-1.5">
-                    Opinion:
-                  </label>
-                  <textarea 
-                    id="organizer-opinion" 
-                    rows="3" 
-                    onblur="saveOrganizerFields(false)"
-                    placeholder="Write or paste the coach or organizer's opinion here..."
-                    class="w-full bg-white border border-slate-300 focus:border-udea-green rounded-xl px-3.5 py-2.5 text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:outline-none leading-relaxed transition"
-                  ></textarea>
-                </div>
-              </div>
-            </section>
-
-            <!-- SECTION: COMPARISON WITH SOFTBALL IN MEDELLÍN -->
-            <section class="pt-4 space-y-4">
-              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
-                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-                <span>COMPARISON WITH SOFTBALL IN MEDELLÍN</span>
-              </h2>
-
-              <p>
-                This university tournament is a little different from softball tournaments in Medellín. In the city, there are teams from different clubs and communities. These tournaments can have more teams and different players.
-              </p>
-
-              <p>
-                In comparison, the university festival has only three teams this year. It is smaller, and its main goal is to bring university students together. Also, students with different levels of experience can play.
-              </p>
-
-              <p>
-                Both tournaments are important because they support sports and teamwork. However, the university festival is special because it gives students the opportunity to play, learn and represent their university.
-              </p>
-            </section>
-
-            <!-- SECTION: WHY DID WE CHOOSE THIS EVENT? -->
-            <section class="pt-4 space-y-4">
-              <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2.5">
-                <span class="w-1.5 h-7 bg-udea-green rounded-full inline-block"></span>
-                <span>WHY DID WE CHOOSE THIS EVENT?</span>
-              </h2>
-
-              <p>
-                We chose this event because we think softball is an interesting and fun sport. We also wanted to show the importance of sports at the university.
-              </p>
-
-              <p>
-                We like this festival because it brings students together. It is not only about winning games. It is also about making friends, learning new skills and working as a team.
-              </p>
-
-              <p>
-                We believe more students should participate in these activities because sports are good for our health and help us have a better university experience.
-              </p>
-            </section>
-
-          </div>
-
-          <!-- SHARED EVENT PHOTOS & VIDEOS GALLERY SECTION -->
-          <section aria-labelledby="gallery-heading" class="mt-12 pt-8 border-t border-slate-200">
+<!-- ... existing code ... -->
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
               <div>
                 <div class="flex flex-wrap items-center gap-2">
@@ -453,23 +9,24 @@
                   </span>
                 </div>
                 <h2 id="gallery-heading" class="font-serif text-2xl font-bold text-slate-900 mt-0.5">Event Photos &amp; Videos</h2>
-                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Upload photos directly from your phone/PC or paste a video link — everyone visiting the page will see them.</p>
+                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Select photos or videos directly from your phone or computer — everyone visiting the page will see them.</p>
               </div>
               
-              <!-- Interactive Photo Upload & Video Link Buttons -->
+              <!-- Interactive Direct Photo & Video File Upload Buttons -->
               <div class="no-print flex flex-wrap items-center gap-2 self-start sm:self-auto">
-                <button type="button" onclick="toggleMediaUrlForm()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white text-udea-green border border-udea-green/35 text-xs font-semibold hover:bg-udea-light transition shadow-2xs cursor-pointer">
+                <label class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white text-udea-green border border-udea-green/35 text-xs font-semibold hover:bg-udea-light transition shadow-2xs cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                   </svg>
-                  <span>Add Video / URL</span>
-                </button>
+                  <span>Upload Video</span>
+                  <input type="file" accept="video/*" multiple onchange="handleMediaFileUpload(event)" class="hidden">
+                </label>
                 <label class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
                   <span>Upload Photo</span>
-                  <input type="file" accept="image/*" multiple onchange="handlePhotoUpload(event)" class="hidden">
+                  <input type="file" accept="image/*" multiple onchange="handleMediaFileUpload(event)" class="hidden">
                 </label>
               </div>
             </div>
@@ -480,124 +37,18 @@
               <button type="button" onclick="hideGalleryBanner()" class="text-xs font-bold underline cursor-pointer shrink-0">Dismiss</button>
             </div>
 
-            <!-- Collapsible Video / Public Media URL Form -->
-            <div id="media-url-panel" class="no-print hidden mb-6 rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-3">
-              <p class="text-xs font-semibold text-slate-700">
-                Paste a YouTube link, direct video link (.mp4), or public image URL to publish it for all visitors:
-              </p>
-              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
-                <input type="url" id="media-url-input" placeholder="https://youtube.com/watch?v=... or https://.../video.mp4" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
-                <input type="text" id="media-caption-input" placeholder="Caption (e.g., Home run at UdeA synthetic field)" class="sm:col-span-5 rounded-lg border border-slate-300 px-3 py-2 text-xs sm:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-udea-green">
-                <button type="button" onclick="addMediaByUrl()" class="sm:col-span-2 px-3.5 py-2 rounded-lg bg-udea-green text-white text-xs font-semibold hover:bg-udea-dark transition cursor-pointer">
-                  Publish
-                </button>
-              </div>
-            </div>
-
             <!-- Dynamic Shared Media Grid -->
             <div id="shared-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-              <!-- Populated in real time across all devices -->
+              <!-- Populated from server storage -->
             </div>
 
-            <!-- Hidden single-slot photo input -->
-            <input type="file" id="single-photo-input" accept="image/*" class="hidden" onchange="handleSinglePhotoUpload(event)">
+            <!-- Hidden single-slot photo/video input -->
+            <input type="file" id="single-media-input" accept="image/*,video/*" class="hidden" onchange="handleSingleMediaUpload(event)">
           </section>
 
         </div>
       </article>
-
-      <!-- Right Sidebar: Shared Spectator Comments Section -->
-      <aside aria-labelledby="comments-heading" class="lg:col-span-4 lg:sticky lg:top-24 bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
-        <div class="h-2 bg-gradient-to-r from-udea-emerald to-udea-green"></div>
-        <div class="p-5 sm:p-6">
-          <div class="flex items-center justify-between gap-2 mb-1">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-udea-green">Live Campus Wall</span>
-            <span id="comments-count-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-udea-light text-udea-green">2</span>
-          </div>
-          <h2 id="comments-heading" class="font-serif text-xl font-bold text-slate-900">
-            Spectator Comments
-          </h2>
-          <p class="text-xs text-slate-500 mt-1 mb-5">
-            Share your thoughts, cheer for your favorite team, or leave a message visible to everyone.
-          </p>
-
-          <!-- Add Spectator Comment Form -->
-          <form id="spectator-comment-form" onsubmit="addSpectatorComment(event)" class="no-print space-y-3 pb-5 border-b border-slate-200/80">
-            <div>
-              <label for="spectator-name" class="block text-xs font-semibold text-slate-700 mb-1">Name</label>
-              <input 
-                type="text" 
-                id="spectator-name" 
-                required 
-                maxlength="60"
-                placeholder="e.g., Camilo Gómez"
-                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-udea-green"
-              >
-            </div>
-
-            <div>
-              <label for="spectator-team" class="block text-xs font-semibold text-slate-700 mb-1">Supporting / Role</label>
-              <select 
-                id="spectator-team" 
-                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-udea-green"
-              >
-                <option value="UdeA Spectator">UdeA Spectator</option>
-                <option value="Fan — Team Arañita">Fan — Team Arañita</option>
-                <option value="Fan — Team Smirnoff">Fan — Team Smirnoff</option>
-                <option value="Fan — Team Águilas">Fan — Team Águilas</option>
-                <option value="Student Athlete">Student Athlete</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="spectator-message" class="block text-xs font-semibold text-slate-700 mb-1">Comment</label>
-              <textarea 
-                id="spectator-message" 
-                rows="3" 
-                required 
-                maxlength="320"
-                placeholder="Write your comment about the games..."
-                class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-udea-green leading-relaxed"
-              ></textarea>
-            </div>
-
-            <button type="submit" id="post-comment-btn" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-udea-green text-white text-xs sm:text-sm font-semibold hover:bg-udea-dark transition shadow-sm cursor-pointer">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
-              </svg>
-              <span>Post Comment</span>
-            </button>
-          </form>
-
-          <!-- Comments Feed -->
-          <div id="spectator-comments-list" class="mt-5 space-y-3.5 max-h-[30rem] overflow-y-auto pr-1">
-            <!-- Rendered dynamically via real-time sync -->
-          </div>
-        </div>
-      </aside>
-
-    </div>
-  </main>
-
-  <!-- Institutional Footer with Official UdeA Logo -->
-  <footer class="bg-white border-t border-slate-200 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div class="flex flex-col sm:flex-row items-center gap-3.5">
-        <img 
-          src="image_9b2b00.png" 
-          alt="Universidad de Antioquia" 
-          class="h-10 w-auto object-contain"
-          onerror="this.onerror=null; this.src='https://placehold.co/200x56/ffffff/026937?text=UNIVERSIDAD+DE+ANTIOQUIA';"
-        >
-        <div class="hidden sm:block h-8 w-px bg-slate-200"></div>
-        <p class="text-xs text-slate-500">University Softball Festival • Sports &amp; Campus Life</p>
-      </div>
-      <div class="text-xs text-slate-500">
-        Written by <span class="font-semibold text-slate-800">Alejandro Vergara &amp; Wendy</span>
-      </div>
-    </div>
-  </footer>
-
+<!-- ... existing code ... -->
   <!-- Full-Screen Lightbox Modal for Inspecting Poster, Photos, or Videos -->
   <div id="lightbox-modal" onclick="closeLightbox(event)" class="no-print fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6">
     <div class="relative max-w-4xl w-full flex flex-col items-center">
@@ -616,27 +67,8 @@
     </div>
   </div>
 
-  <!-- Real-Time Cloud Synchronization Module -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import {
-      getFirestore,
-      doc,
-      setDoc,
-      addDoc,
-      updateDoc,
-      deleteDoc,
-      onSnapshot,
-      collection
-    } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'udea-softball-festival';
-    const rawConfig = typeof __firebase_config !== 'undefined' ? __firebase_config : null;
-
-    let db = null;
-    let auth = null;
-    let currentUser = null;
+  <!-- Server Storage & Real-Time Synchronization Script -->
+  <script>
     let sharedGalleryItems = [];
     let sharedComments = [];
     let targetSlotIndex = null;
@@ -645,25 +77,6 @@
       'Opening match at the UdeA synthetic field.',
       'Arañita, Smirnoff, and Águilas in action.',
       'Teamwork and student camaraderie on campus.'
-    ];
-
-    const SEED_COMMENTS = [
-      {
-        id: 'seed-1',
-        name: 'Laura Restrepo',
-        team: 'Fan — Team Águilas',
-        message: 'Great atmosphere every Thursday at 2:00 p.m.! Love seeing new students learning softball at the synthetic field.',
-        date: 'UdeA Campus',
-        createdAt: 1
-      },
-      {
-        id: 'seed-2',
-        name: 'Mateo Ríos',
-        team: 'UdeA Spectator',
-        message: 'Excited for the final on November 26! Great article by Alejandro and Wendy.',
-        date: 'UdeA Campus',
-        createdAt: 2
-      }
     ];
 
     function escapeHtml(text) {
@@ -685,68 +98,19 @@
       }
     }
 
-    window.hideGalleryBanner = function () {
+    function hideGalleryBanner() {
       const banner = document.getElementById('gallery-status-banner');
       if (banner) banner.classList.add('hidden');
-    };
-
-    // Compress uploaded image via Canvas so it fits cleanly in cloud document (< 250 KB)
-    function compressImageToDataUrl(file, maxDimension = 960, quality = 0.72) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => {
-          const img = new Image();
-          img.onload = () => {
-            let { width, height } = img;
-            if (width > maxDimension || height > maxDimension) {
-              if (width > height) {
-                height = Math.round((height * maxDimension) / width);
-                width = maxDimension;
-              } else {
-                width = Math.round((width * maxDimension) / height);
-                height = maxDimension;
-              }
-            }
-            const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, width, height);
-            const dataUrl = canvas.toDataURL('image/jpeg', quality);
-            resolve(dataUrl);
-          };
-          img.onerror = () => reject(new Error('Invalid image file'));
-          img.src = reader.result;
-        };
-        reader.onerror = () => reject(new Error('Could not read file'));
-        reader.readAsDataURL(file);
-      });
-    }
-
-    function parseVideoEmbed(url) {
-      const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
-      if (ytMatch) {
-        return {
-          kind: 'youtube',
-          embedUrl: `https://www.youtube.com/embed/${ytMatch[1]}`
-        };
-      }
-      if (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(url)) {
-        return { kind: 'video', embedUrl: url };
-      }
-      return { kind: 'image', embedUrl: url };
     }
 
     // Lightbox Functions
-    window.openLightbox = function (src, caption, kind = 'image') {
+    function openLightbox(src, caption, kind = 'image') {
       const modal = document.getElementById('lightbox-modal');
       const wrapper = document.getElementById('lightbox-media-wrapper');
       const captionEl = document.getElementById('lightbox-caption');
       captionEl.textContent = caption || 'Tournament Visual';
 
-      if (kind === 'youtube') {
-        wrapper.innerHTML = `<iframe src="${escapeHtml(src)}" class="w-full max-w-3xl aspect-video rounded-xl shadow-2xl border border-white/15 bg-black" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-      } else if (kind === 'video' || kind === true) {
+      if (kind === 'video' || kind === true) {
         wrapper.innerHTML = `<video src="${escapeHtml(src)}" controls autoplay playsinline class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 bg-black"></video>`;
       } else {
         wrapper.innerHTML = `<img src="${escapeHtml(src)}" alt="Expanded view" class="max-h-[82vh] w-auto rounded-xl shadow-2xl border border-white/15 object-contain bg-white">`;
@@ -754,30 +118,30 @@
 
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-    };
+    }
 
-    window.forceCloseLightbox = function () {
+    function forceCloseLightbox() {
       const modal = document.getElementById('lightbox-modal');
       const wrapper = document.getElementById('lightbox-media-wrapper');
       modal.classList.add('hidden');
       wrapper.innerHTML = '';
       document.body.style.overflow = '';
-    };
+    }
 
-    window.closeLightbox = function (event) {
+    function closeLightbox(event) {
       if (event.target.id === 'lightbox-modal') {
-        window.forceCloseLightbox();
+        forceCloseLightbox();
       }
-    };
+    }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') window.forceCloseLightbox();
+      if (e.key === 'Escape') forceCloseLightbox();
     });
 
-    // Audio / Vocaroo UI & Cloud Sync
-    window.toggleAudioEditor = function () {
+    // Audio / Vocaroo UI & Server Sync
+    function toggleAudioEditor() {
       document.getElementById('audio-editor-panel').classList.toggle('hidden');
-    };
+    }
 
     function renderVocarooState(vocarooUrl) {
       const placeholder = document.getElementById('audio-default-placeholder');
@@ -822,40 +186,39 @@
       statusText.textContent = 'Article audio recording attached and visible to everyone';
     }
 
-    window.applyVocarooLink = async function () {
+    async function applyVocarooLink() {
       const input = document.getElementById('vocaroo-input');
       const feedback = document.getElementById('audio-feedback');
       const rawUrl = input.value.trim();
       if (!rawUrl) return;
 
       renderVocarooState(rawUrl);
-      if (db && currentUser) {
-        try {
-          const metaRef = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
-          await setDoc(metaRef, { vocarooUrl: rawUrl, updatedAt: Date.now() }, { merge: true });
-          feedback.textContent = 'Vocaroo link published for all devices.';
-          feedback.classList.remove('hidden');
-        } catch (err) {
-          feedback.textContent = 'Could not sync link right now. Please try again.';
-          feedback.classList.remove('hidden');
-        }
+      try {
+        await fetch('/api/meta', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ vocarooUrl: rawUrl })
+        });
+        feedback.textContent = 'Vocaroo link saved for all devices.';
+        feedback.classList.remove('hidden');
+      } catch (err) {
+        feedback.textContent = 'Could not save link right now.';
+        feedback.classList.remove('hidden');
       }
-    };
+    }
 
-    // Organizer Interview Cloud Sync
-    window.saveOrganizerFields = async function (showToast = false) {
+    // Organizer Interview Server Sync
+    async function saveOrganizerFields(showToast = false) {
       const nameVal = document.getElementById('organizer-name').value.trim();
       const opinionVal = document.getElementById('organizer-opinion').value.trim();
       const statusEl = document.getElementById('organizer-sync-status');
 
-      if (!db || !currentUser) return;
       try {
-        const metaRef = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
-        await setDoc(metaRef, {
-          organizerName: nameVal,
-          organizerOpinion: opinionVal,
-          updatedAt: Date.now()
-        }, { merge: true });
+        await fetch('/api/meta', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ organizerName: nameVal, organizerOpinion: opinionVal })
+        });
         if (showToast && statusEl) {
           statusEl.textContent = 'Saved & Visible to Everyone!';
           setTimeout(() => {
@@ -863,17 +226,13 @@
           }, 2500);
         }
       } catch (err) {}
-    };
+    }
 
-    // Gallery Rendering & Cloud Uploads
-    window.toggleMediaUrlForm = function () {
-      document.getElementById('media-url-panel').classList.toggle('hidden');
-    };
-
-    window.triggerSlotPicker = function (slotIdx) {
+    // Gallery Rendering & Direct File Uploads
+    function triggerSlotPicker(slotIdx) {
       targetSlotIndex = slotIdx;
-      document.getElementById('single-photo-input').click();
-    };
+      document.getElementById('single-media-input').click();
+    }
 
     function renderGallery() {
       const grid = document.getElementById('shared-media-grid');
@@ -882,12 +241,10 @@
       const sorted = [...sharedGalleryItems].sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
       const cards = [];
 
-      // Render all uploaded/linked media first
       sorted.forEach((item, idx) => {
         cards.push({ empty: false, item, idx });
       });
 
-      // Keep at least 3 visual frames visible so empty slots invite uploads
       while (cards.length < 3) {
         const slotIdx = cards.length;
         cards.push({
@@ -908,7 +265,7 @@
                   </svg>
                 </div>
                 <span class="text-sm font-bold text-slate-700">Photo or Video ${displayIdx + 1}</span>
-                <span class="text-xs text-slate-400 mt-1">Click to upload photo</span>
+                <span class="text-xs text-slate-400 mt-1">Click to upload photo or video</span>
               </div>
               <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
                 ${escapeHtml(card.caption)}
@@ -922,14 +279,9 @@
         const safeSrc = escapeHtml(item.src);
         const kind = item.kind || 'image';
 
-        let mediaHtml = '';
-        if (kind === 'youtube') {
-          mediaHtml = `<iframe src="${safeSrc}" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        } else if (kind === 'video') {
-          mediaHtml = `<video src="${safeSrc}" controls playsinline class="w-full h-full object-cover"></video>`;
-        } else {
-          mediaHtml = `<img src="${safeSrc}" alt="${safeCaption}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x450/e8f5ee/026937?text=UdeA+Softball+Event';">`;
-        }
+        const mediaHtml = kind === 'video'
+          ? `<video src="${safeSrc}" controls playsinline class="w-full h-full object-cover"></video>`
+          : `<img src="${safeSrc}" alt="${safeCaption}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x450/e8f5ee/026937?text=UdeA+Softball+Event';">`;
 
         return `
           <figure class="group relative rounded-2xl border border-slate-200 bg-white shadow-2xs overflow-hidden flex flex-col">
@@ -958,106 +310,86 @@
       }).join('');
     }
 
-    async function uploadSinglePhotoFile(file, captionOverride) {
-      if (!db || !currentUser) {
-        showGalleryBanner('Connecting to shared gallery... please wait a second and try again.', true);
-        return;
+    async function uploadFilesToServer(files, captionOverride) {
+      if (!files || files.length === 0) return;
+      showGalleryBanner(`Uploading ${files.length} file(s)... please wait.`);
+
+      const formData = new FormData();
+      for (const file of files) {
+        formData.append('media', file);
       }
-      showGalleryBanner('Optimizing and publishing photo for all devices...');
+      if (captionOverride) {
+        formData.append('caption', captionOverride);
+      }
+
       try {
-        const compressedDataUrl = await compressImageToDataUrl(file, 960, 0.72);
-        const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
-        await addDoc(colRef, {
-          src: compressedDataUrl,
-          kind: 'image',
-          caption: captionOverride || file.name.replace(/\.[^/.]+$/, ''),
-          createdAt: Date.now()
+        const res = await fetch('/api/gallery/upload', {
+          method: 'POST',
+          body: formData
         });
-        showGalleryBanner('Photo published! Everyone visiting this page can now see it.');
+        const data = await res.json();
+        if (data.ok) {
+          sharedGalleryItems = data.gallery;
+          renderGallery();
+          showGalleryBanner('Published! Your photo/video is now saved and visible to all visitors.');
+        } else {
+          showGalleryBanner('Upload failed. Please verify the file format.', true);
+        }
       } catch (err) {
-        showGalleryBanner('Could not upload photo. Please try a smaller image.', true);
+        showGalleryBanner('Connection error while uploading file.', true);
       }
     }
 
-    window.handleSinglePhotoUpload = async function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const defaultCap = targetSlotIndex !== null && DEFAULT_CAPTIONS[targetSlotIndex]
-          ? DEFAULT_CAPTIONS[targetSlotIndex]
-          : undefined;
-        await uploadSinglePhotoFile(file, defaultCap);
-      }
-      event.target.value = '';
-    };
-
-    window.handlePhotoUpload = async function (event) {
+    async function handleSingleMediaUpload(event) {
       const files = Array.from(event.target.files);
-      for (const file of files) {
-        await uploadSinglePhotoFile(file);
-      }
+      const defaultCap = targetSlotIndex !== null && DEFAULT_CAPTIONS[targetSlotIndex]
+        ? DEFAULT_CAPTIONS[targetSlotIndex]
+        : '';
+      await uploadFilesToServer(files, defaultCap);
       event.target.value = '';
-    };
+    }
 
-    window.addMediaByUrl = async function () {
-      const urlInput = document.getElementById('media-url-input');
-      const capInput = document.getElementById('media-caption-input');
-      const rawUrl = urlInput.value.trim();
-      if (!rawUrl) return;
+    async function handleMediaFileUpload(event) {
+      const files = Array.from(event.target.files);
+      await uploadFilesToServer(files, '');
+      event.target.value = '';
+    }
 
-      if (!db || !currentUser) {
-        showGalleryBanner('Connecting to shared gallery... please wait a second and try again.', true);
-        return;
-      }
-
-      const parsed = parseVideoEmbed(rawUrl);
+    async function updateGalleryCaption(docId, newCaption) {
       try {
-        const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
-        await addDoc(colRef, {
-          src: parsed.embedUrl,
-          kind: parsed.kind,
-          caption: capInput.value.trim() || 'Tournament highlight',
-          createdAt: Date.now()
+        await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ caption: newCaption })
         });
-        urlInput.value = '';
-        capInput.value = '';
-        showGalleryBanner('Published! Everyone visiting this page can now watch or view it.');
-      } catch (err) {
-        showGalleryBanner('Could not publish link. Please check the URL and try again.', true);
-      }
-    };
-
-    window.updateGalleryCaption = async function (docId, newCaption) {
-      if (!db || !currentUser || !docId) return;
-      try {
-        const itemRef = doc(db, 'artifacts', appId, 'public', 'data', 'gallery', docId);
-        await updateDoc(itemRef, { caption: newCaption.trim() || 'Tournament highlight' });
       } catch (err) {}
-    };
+    }
 
-    window.deleteGalleryItem = async function (docId) {
-      if (!db || !currentUser || !docId) return;
+    async function deleteGalleryItem(docId) {
       try {
-        const itemRef = doc(db, 'artifacts', appId, 'public', 'data', 'gallery', docId);
-        await deleteDoc(itemRef);
+        await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
+          method: 'DELETE'
+        });
+        sharedGalleryItems = sharedGalleryItems.filter((item) => item.id !== docId);
+        renderGallery();
       } catch (err) {}
-    };
+    }
 
-    // Spectator Comments Rendering & Cloud Submission
+    // Spectator Comments Rendering & Server Submission
     function renderComments() {
       const list = document.getElementById('spectator-comments-list');
       const badge = document.getElementById('comments-count-badge');
       if (!list) return;
 
-      const combined = [...sharedComments].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-      const displayList = combined.length > 0 ? combined : SEED_COMMENTS;
+      const displayList = [...sharedComments].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
       if (badge) badge.textContent = displayList.length;
 
-      list.innerHTML = displayList.map(item => {
+      list.innerHTML = displayList.map((item) => {
         const initials = (item.name || 'S')
           .split(' ')
           .filter(Boolean)
           .slice(0, 2)
-          .map(part => part[0].toUpperCase())
+          .map((part) => part[0].toUpperCase())
           .join('') || 'S';
 
         return `
@@ -1082,7 +414,7 @@
       }).join('');
     }
 
-    window.addSpectatorComment = async function (event) {
+    async function addSpectatorComment(event) {
       event.preventDefault();
       const nameInput = document.getElementById('spectator-name');
       const teamInput = document.getElementById('spectator-team');
@@ -1093,92 +425,54 @@
       const message = msgInput.value.trim();
       if (!name || !message) return;
 
-      const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
-      if (db && currentUser) {
-        try {
-          const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'comments');
-          await addDoc(colRef, {
-            name,
-            team,
-            message,
-            date: dateStr,
-            createdAt: Date.now()
-          });
+      try {
+        const res = await fetch('/api/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, team, message })
+        });
+        const data = await res.json();
+        if (data.ok) {
+          sharedComments = data.comments;
+          renderComments();
           nameInput.value = '';
           msgInput.value = '';
-        } catch (err) {}
-      }
-    };
-
-    // Bootstrap Cloud Auth & Real-Time Listeners
-    async function initSharedCloudSync() {
-      renderGallery();
-      renderComments();
-
-      if (!rawConfig) return;
-
-      try {
-        const firebaseConfig = JSON.parse(rawConfig);
-        const app = initializeApp(firebaseConfig);
-        auth = getAuth(app);
-        db = getFirestore(app);
-
-        // RULE 3: Authenticate FIRST and await before any Firestore queries
-        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-          const cred = await signInWithCustomToken(auth, __initial_auth_token);
-          currentUser = cred.user;
-        } else {
-          const cred = await signInAnonymously(auth);
-          currentUser = cred.user;
         }
+      } catch (err) {}
+    }
 
-        if (!currentUser) return;
+    // Load initial data from server & refresh periodically so new uploads/comments appear automatically
+    async function syncFromServer() {
+      try {
+        const res = await fetch('/api/state');
+        const state = await res.json();
 
-        // Listener 1: Shared Gallery (RULE 1 strict public path, RULE 2 simple collection query)
-        const galleryCol = collection(db, 'artifacts', appId, 'public', 'data', 'gallery');
-        onSnapshot(galleryCol, (snapshot) => {
-          sharedGalleryItems = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+        if (Array.isArray(state.gallery)) {
+          sharedGalleryItems = state.gallery;
           renderGallery();
-        }, (err) => {
-          console.error('Gallery sync error:', err);
-        });
-
-        // Listener 2: Shared Spectator Comments
-        const commentsCol = collection(db, 'artifacts', appId, 'public', 'data', 'comments');
-        onSnapshot(commentsCol, (snapshot) => {
-          sharedComments = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+        }
+        if (Array.isArray(state.comments)) {
+          sharedComments = state.comments;
           renderComments();
-        }, (err) => {
-          console.error('Comments sync error:', err);
-        });
-
-        // Listener 3: Shared Vocaroo Audio & Organizer Interview
-        const metaDoc = doc(db, 'artifacts', appId, 'public', 'data', 'articleMeta', 'shared');
-        onSnapshot(metaDoc, (snap) => {
-          if (!snap.exists()) return;
-          const data = snap.data();
-          if (data.vocarooUrl) {
-            renderVocarooState(data.vocarooUrl);
+        }
+        if (state.meta) {
+          if (state.meta.vocarooUrl) {
+            renderVocarooState(state.meta.vocarooUrl);
           }
           const orgNameEl = document.getElementById('organizer-name');
           const orgOpEl = document.getElementById('organizer-opinion');
-          if (orgNameEl && document.activeElement !== orgNameEl && typeof data.organizerName === 'string') {
-            orgNameEl.value = data.organizerName;
+          if (orgNameEl && document.activeElement !== orgNameEl && typeof state.meta.organizerName === 'string') {
+            orgNameEl.value = state.meta.organizerName;
           }
-          if (orgOpEl && document.activeElement !== orgOpEl && typeof data.organizerOpinion === 'string') {
-            orgOpEl.value = data.organizerOpinion;
+          if (orgOpEl && document.activeElement !== orgOpEl && typeof state.meta.organizerOpinion === 'string') {
+            orgOpEl.value = state.meta.organizerOpinion;
           }
-        }, (err) => {
-          console.error('Meta sync error:', err);
-        });
-
-      } catch (err) {
-        console.error('Cloud initialization failed:', err);
-      }
+        }
+      } catch (err) {}
     }
 
-    initSharedCloudSync();
+    syncFromServer();
+    setInterval(syncFromServer, 8000);
   </script>
 </body>
 </html>
