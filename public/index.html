@@ -481,6 +481,19 @@
               <button type="button" onclick="hideGalleryBanner()" class="text-xs font-bold underline cursor-pointer shrink-0">Dismiss</button>
             </div>
 
+            <!-- Optional Pre-Upload Description Input -->
+            <div class="no-print mb-5 rounded-xl bg-slate-50 border border-slate-200/90 p-3.5 flex flex-col sm:flex-row sm:items-center gap-2.5">
+              <label for="upload-caption-input" class="text-xs font-semibold text-slate-700 shrink-0">
+                Photo / Video Description:
+              </label>
+              <input 
+                type="text" 
+                id="upload-caption-input" 
+                placeholder="Write a description before uploading (or edit it directly below any photo/video)..." 
+                class="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-xs sm:text-sm bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-udea-green"
+              >
+            </div>
+
             <!-- Dynamic Shared Media Grid -->
             <div id="shared-media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
               <!-- Populated from server storage -->
@@ -839,13 +852,26 @@
               </div>
             </div>
             <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-udea-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" title="Edit description">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+              </svg>
               <input 
                 type="text" 
+                id="caption-input-${item.id}"
                 value="${safeCaption}" 
+                placeholder="Add description..."
                 onchange="updateGalleryCaption('${item.id}', this.value)"
-                aria-label="Media caption"
-                class="w-full text-xs text-slate-700 font-medium bg-transparent border-b border-transparent focus:border-udea-green focus:outline-none py-0.5"
+                aria-label="Media description"
+                class="w-full text-xs text-slate-700 font-medium bg-slate-50/70 hover:bg-slate-100/80 focus:bg-white rounded px-2 py-1 border border-slate-200/80 focus:border-udea-green focus:outline-none transition"
               >
+              <button 
+                type="button" 
+                onclick="updateGalleryCaption('${item.id}', document.getElementById('caption-input-${item.id}').value, true)"
+                class="no-print px-2 py-1 rounded bg-udea-light text-udea-green hover:bg-udea-green hover:text-white text-[11px] font-semibold transition cursor-pointer shrink-0"
+                title="Save description"
+              >
+                Save
+              </button>
             </figcaption>
           </figure>
         `;
@@ -884,11 +910,40 @@
 
     async function handleSingleMediaUpload(event) {
       const files = Array.from(event.target.files);
-      const defaultCap = targetSlotIndex !== null && DEFAULT_CAPTIONS[targetSlotIndex]
+      const customInput = document.getElementById('upload-caption-input');
+      const typedCaption = customInput ? customInput.value.trim() : '';
+      const defaultCap = typedCaption || (targetSlotIndex !== null && DEFAULT_CAPTIONS[targetSlotIndex]
         ? DEFAULT_CAPTIONS[targetSlotIndex]
-        : '';
+        : '');
       await uploadFilesToServer(files, defaultCap);
+      if (customInput && typedCaption) customInput.value = '';
       event.target.value = '';
+    }
+
+    async function handleMediaFileUpload(event) {
+      const files = Array.from(event.target.files);
+      const customInput = document.getElementById('upload-caption-input');
+      const typedCaption = customInput ? customInput.value.trim() : '';
+      await uploadFilesToServer(files, typedCaption);
+      if (customInput && typedCaption) customInput.value = '';
+      event.target.value = '';
+    }
+
+    async function updateGalleryCaption(docId, newCaption, showToast = false) {
+      try {
+        await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ caption: newCaption })
+        });
+        const localItem = sharedGalleryItems.find((g) => g.id === docId);
+        if (localItem) localItem.caption = newCaption.trim() || 'Tournament highlight';
+        if (showToast) {
+          showGalleryBanner('Description saved and updated for all visitors!');
+        }
+      } catch (err) {
+        if (showToast) showGalleryBanner('Could not save description.', true);
+      }
     }
 
     async function handleMediaFileUpload(event) {
