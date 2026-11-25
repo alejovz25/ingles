@@ -621,6 +621,7 @@
     let sharedGalleryItems = [];
     let sharedComments = [];
     let targetSlotIndex = null;
+    let editingGalleryId = null;
 
     const DEFAULT_CAPTIONS = [
       'Opening match at the UdeA synthetic field.',
@@ -811,6 +812,7 @@
 
       grid.innerHTML = cards.map((card, displayIdx) => {
         if (card.empty) {
+          const isEditingEmpty = editingGalleryId === `empty-${card.slotIdx}`;
           return `
             <figure class="group relative rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/80 hover:border-udea-green/60 hover:bg-udea-light/20 transition overflow-hidden flex flex-col">
               <div onclick="triggerSlotPicker(${card.slotIdx})" class="aspect-[4/3] w-full flex flex-col items-center justify-center p-6 text-center cursor-pointer relative">
@@ -822,8 +824,25 @@
                 <span class="text-sm font-bold text-slate-700">Photo or Video ${displayIdx + 1}</span>
                 <span class="text-xs text-slate-400 mt-1">Click to upload photo or video</span>
               </div>
-              <figcaption class="px-4 py-2.5 bg-white border-t border-slate-200/80 text-xs text-slate-500 font-medium">
-                ${escapeHtml(card.caption)}
+              <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center justify-between gap-2">
+                ${isEditingEmpty ? `
+                  <input 
+                    type="text" 
+                    id="empty-caption-input-${card.slotIdx}" 
+                    value="${escapeHtml(card.caption)}" 
+                    onkeydown="if(event.key==='Enter'){ event.preventDefault(); saveEmptySlotCaption(${card.slotIdx}); }"
+                    class="w-full text-xs text-slate-800 font-medium bg-slate-50 rounded px-2 py-1 border border-udea-green focus:outline-none"
+                  >
+                  <button type="button" onclick="saveEmptySlotCaption(${card.slotIdx})" class="no-print px-2.5 py-1 rounded bg-udea-green text-white text-[11px] font-semibold hover:bg-udea-dark transition cursor-pointer shrink-0">
+                    Guardar
+                  </button>
+                ` : `
+                  <span class="text-xs text-slate-500 font-medium truncate">${escapeHtml(card.caption)}</span>
+                  <button type="button" onclick="startEditCaption('empty-${card.slotIdx}')" class="no-print inline-flex items-center gap-1 px-2 py-1 rounded bg-slate-100 text-slate-600 hover:bg-udea-light hover:text-udea-green text-[11px] font-semibold transition cursor-pointer shrink-0">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    <span>Editar</span>
+                  </button>
+                `}
               </figcaption>
             </figure>
           `;
@@ -833,6 +852,7 @@
         const safeCaption = escapeHtml(item.caption || `Event Highlight ${displayIdx + 1}`);
         const safeSrc = escapeHtml(item.src);
         const kind = item.kind || 'image';
+        const isEditing = editingGalleryId === item.id;
 
         const mediaHtml = kind === 'video'
           ? `<video src="${safeSrc}" controls playsinline class="w-full h-full object-cover"></video>`
@@ -851,31 +871,71 @@
                 </button>
               </div>
             </div>
-            <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 text-udea-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" title="Edit description">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-              </svg>
-              <input 
-                type="text" 
-                id="caption-input-${item.id}"
-                value="${safeCaption}" 
-                placeholder="Add description..."
-                onchange="updateGalleryCaption('${item.id}', this.value)"
-                aria-label="Media description"
-                class="w-full text-xs text-slate-700 font-medium bg-slate-50/70 hover:bg-slate-100/80 focus:bg-white rounded px-2 py-1 border border-slate-200/80 focus:border-udea-green focus:outline-none transition"
-              >
-              <button 
-                type="button" 
-                onclick="updateGalleryCaption('${item.id}', document.getElementById('caption-input-${item.id}').value, true)"
-                class="no-print px-2 py-1 rounded bg-udea-light text-udea-green hover:bg-udea-green hover:text-white text-[11px] font-semibold transition cursor-pointer shrink-0"
-                title="Save description"
-              >
-                Save
-              </button>
+            <figcaption class="px-3.5 py-2.5 bg-white border-t border-slate-200/80 flex items-center justify-between gap-2">
+              ${isEditing ? `
+                <input 
+                  type="text" 
+                  id="caption-input-${item.id}"
+                  value="${safeCaption}" 
+                  placeholder="Write description..."
+                  onkeydown="if(event.key==='Enter'){ event.preventDefault(); saveEditedCaption('${item.id}'); }"
+                  aria-label="Media description"
+                  class="w-full text-xs text-slate-800 font-medium bg-slate-50 rounded px-2 py-1 border border-udea-green focus:outline-none"
+                >
+                <button 
+                  type="button" 
+                  onclick="saveEditedCaption('${item.id}')"
+                  class="no-print px-2.5 py-1 rounded bg-udea-green text-white hover:bg-udea-dark text-[11px] font-semibold transition cursor-pointer shrink-0"
+                >
+                  Guardar
+                </button>
+              ` : `
+                <p class="text-xs text-slate-700 font-medium line-clamp-2 flex-1" title="${safeCaption}">${safeCaption}</p>
+                <button 
+                  type="button" 
+                  onclick="startEditCaption('${item.id}')"
+                  class="no-print inline-flex items-center gap-1 px-2.5 py-1 rounded bg-udea-light text-udea-green hover:bg-udea-green hover:text-white text-[11px] font-semibold transition cursor-pointer shrink-0"
+                  title="Editar descripción"
+                >
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                  </svg>
+                  <span>Editar</span>
+                </button>
+              `}
             </figcaption>
           </figure>
         `;
       }).join('');
+    }
+
+    function startEditCaption(targetId) {
+      editingGalleryId = targetId;
+      renderGallery();
+      const inputEl = targetId.startsWith('empty-')
+        ? document.getElementById(`empty-caption-input-${targetId.replace('empty-', '')}`)
+        : document.getElementById(`caption-input-${targetId}`);
+      if (inputEl) {
+        inputEl.focus();
+        inputEl.select();
+      }
+    }
+
+    function saveEmptySlotCaption(slotIdx) {
+      const inputEl = document.getElementById(`empty-caption-input-${slotIdx}`);
+      if (inputEl && inputEl.value.trim()) {
+        DEFAULT_CAPTIONS[slotIdx] = inputEl.value.trim();
+      }
+      editingGalleryId = null;
+      renderGallery();
+    }
+
+    async function saveEditedCaption(docId) {
+      const inputEl = document.getElementById(`caption-input-${docId}`);
+      const newCaption = inputEl ? inputEl.value.trim() : '';
+      editingGalleryId = null;
+      await updateGalleryCaption(docId, newCaption, true);
+      renderGallery();
     }
 
     async function uploadFilesToServer(files, captionOverride) {
@@ -944,22 +1004,6 @@
       } catch (err) {
         if (showToast) showGalleryBanner('Could not save description.', true);
       }
-    }
-
-    async function handleMediaFileUpload(event) {
-      const files = Array.from(event.target.files);
-      await uploadFilesToServer(files, '');
-      event.target.value = '';
-    }
-
-    async function updateGalleryCaption(docId, newCaption) {
-      try {
-        await fetch(`/api/gallery/${encodeURIComponent(docId)}`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ caption: newCaption })
-        });
-      } catch (err) {}
     }
 
     async function deleteGalleryItem(docId) {
