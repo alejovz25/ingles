@@ -683,30 +683,29 @@
         `;
       }
       statusText.textContent = 'Article audio recording attached and visible to everyone';
-    }
-
-    async function applyVocarooLink() {
-      const input = document.getElementById('vocaroo-input');
-      const feedback = document.getElementById('audio-feedback');
-      const rawUrl = input.value.trim();
-      if (!rawUrl) return;
-
-      renderVocarooState(rawUrl);
-      try {
-        await fetch('/api/meta', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ vocarooUrl: rawUrl })
-        });
-        feedback.textContent = 'Vocaroo link saved for all devices.';
-        feedback.classList.remove('hidden');
-      } catch (err) {
-        feedback.textContent = 'Could not save link right now.';
-        feedback.classList.remove('hidden');
+    // Render Fixed Photographic & Video Evidence with automatic extension fallback
+    function handleImageFallback(imgEl, baseName, labelIndex) {
+      const extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
+      const currentAttempt = Number(imgEl.dataset.attempt || 0);
+      if (currentAttempt < extensions.length) {
+        imgEl.dataset.attempt = currentAttempt + 1;
+        imgEl.src = baseName + extensions[currentAttempt];
+      } else {
+        imgEl.onerror = null;
+        imgEl.src = `https://placehold.co/600x450/e8f5ee/026937?text=Sube+public/${encodeURIComponent(baseName)}.jpg`;
       }
     }
 
-    // Render Fixed Photographic & Video Evidence
+    function handleVideoFallback(videoEl, baseName) {
+      const extensions = ['.mp4', '.MP4', '.mov', '.MOV', '.webm'];
+      const currentAttempt = Number(videoEl.dataset.attempt || 0);
+      if (currentAttempt < extensions.length) {
+        videoEl.dataset.attempt = currentAttempt + 1;
+        videoEl.src = baseName + extensions[currentAttempt];
+        videoEl.load();
+      }
+    }
+
     function renderFixedEvidence() {
       const grid = document.getElementById('fixed-evidence-grid');
       if (!grid) return;
@@ -714,11 +713,12 @@
       grid.innerHTML = FIXED_EVIDENCE_ITEMS.map((item, idx) => {
         const safeCaption = escapeHtml(item.caption);
         const safeSrc = escapeHtml(item.src);
+        const baseName = safeSrc.replace(/\.[^/.]+$/, '');
         const isVideo = item.kind === 'video';
 
         const mediaHtml = isVideo
-          ? `<video src="${safeSrc}" controls playsinline preload="metadata" class="w-full h-full object-cover"></video>`
-          : `<img src="${safeSrc}" alt="${safeCaption}" onclick="openLightbox('${safeSrc}', '${safeCaption.replace(/'/g, "\\'")}', 'image')" class="w-full h-full object-cover cursor-zoom-in group-hover:scale-[1.03] transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x450/e8f5ee/026937?text=Photo+${idx + 1}+(${safeSrc})';">`;
+          ? `<video src="${safeSrc}" controls playsinline preload="metadata" onerror="handleVideoFallback(this, '${baseName}')" class="w-full h-full object-cover"></video>`
+          : `<img src="${safeSrc}" alt="${safeCaption}" onclick="openLightbox(this.src, '${safeCaption.replace(/'/g, "\\'")}', 'image')" class="w-full h-full object-cover cursor-zoom-in group-hover:scale-[1.03] transition duration-300" onerror="handleImageFallback(this, '${baseName}', ${idx + 1});">`;
 
         return `
           <figure class="group relative rounded-2xl border border-slate-200 bg-white shadow-2xs overflow-hidden flex flex-col">
@@ -726,7 +726,7 @@
               ${mediaHtml}
               <button 
                 type="button" 
-                onclick="openLightbox('${safeSrc}', '${safeCaption.replace(/'/g, "\\'")}', '${item.kind}')" 
+                onclick="const media = this.parentElement.querySelector('img, video'); openLightbox(media ? media.src : '${safeSrc}', '${safeCaption.replace(/'/g, "\\'")}', '${item.kind}')" 
                 class="no-print absolute top-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-udea-green/95 text-white text-[11px] font-semibold shadow opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition cursor-pointer"
               >
                 Expand
