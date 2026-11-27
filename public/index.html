@@ -683,6 +683,8 @@
         `;
       }
       statusText.textContent = 'Article audio recording attached and visible to everyone';
+    }
+
     // Render Fixed Photographic & Video Evidence with automatic extension fallback
     function handleImageFallback(imgEl, baseName, labelIndex) {
       const extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
@@ -718,7 +720,7 @@
 
         const mediaHtml = isVideo
           ? `<video src="${safeSrc}" controls playsinline preload="metadata" onerror="handleVideoFallback(this, '${baseName}')" class="w-full h-full object-cover"></video>`
-          : `<img src="${safeSrc}" alt="${safeCaption}" onclick="openLightbox(this.src, '${safeCaption.replace(/'/g, "\\'")}', 'image')" class="w-full h-full object-cover cursor-zoom-in group-hover:scale-[1.03] transition duration-300" onerror="handleImageFallback(this, '${baseName}', ${idx + 1});">`;
+          : `<img src="${safeSrc}" alt="Tournament Photo ${idx + 1}" onclick="openLightbox(this.src, 'Tournament Photo ${idx + 1}', 'image')" class="w-full h-full object-cover cursor-zoom-in group-hover:scale-[1.03] transition duration-300" onerror="handleImageFallback(this, '${baseName}', ${idx + 1});">`;
 
         return `
           <figure class="group relative rounded-2xl border border-slate-200 bg-white shadow-2xs overflow-hidden flex flex-col">
@@ -726,15 +728,12 @@
               ${mediaHtml}
               <button 
                 type="button" 
-                onclick="const media = this.parentElement.querySelector('img, video'); openLightbox(media ? media.src : '${safeSrc}', '${safeCaption.replace(/'/g, "\\'")}', '${item.kind}')" 
+                onclick="const media = this.parentElement.querySelector('img, video'); openLightbox(media ? media.src : '${safeSrc}', 'Tournament Visual ${idx + 1}', '${item.kind}')" 
                 class="no-print absolute top-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-udea-green/95 text-white text-[11px] font-semibold shadow opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition cursor-pointer"
               >
                 Expand
               </button>
             </div>
-            <figcaption class="px-4 py-3 bg-white border-t border-slate-200/80 text-xs text-slate-700 font-medium leading-relaxed">
-              ${safeCaption}
-            </figcaption>
           </figure>
         `;
       }).join('');
